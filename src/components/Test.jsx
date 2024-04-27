@@ -11,6 +11,9 @@ import FeTe from "./questions/FeTe";
 import Desk from "@/models/Desk";
 import FeFi from "./questions/FeFi";
 import GirlCrying from "@/models/CryingGirl";
+import Alley from "@/models/Alley";
+import Detective from "@/models/Detective";
+import NeSe from "./questions/NeSe";
 
 const Test = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -30,7 +33,7 @@ const Test = () => {
     return null;
   };
 
-  const questions = [<SeSi />, <TeTi />, <FeFi />, <FeTe />];
+  const questions = [<SeSi />, <TeTi />, <FeFi />, <FeTe />, <NeSe/>];
   const scenes = [
     <Trip
       // previousQuestion={previousQuestion}
@@ -56,6 +59,18 @@ const Test = () => {
       scale={[1, 1, 1]}
       position={[5, 0, 0]}
     />,
+    <Detective
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[2, 2, 2]}
+      position={[0, -0.05, 0]}
+    />,
+    // <Alley
+    //   previousQuestion={previousQuestion}
+    //   nextQuestion={nextQuestion}
+    //   scale={[1, 1, 1]}
+    //   position={[0, 0, 0]}
+    // />,
   ];
 
   return (
@@ -83,6 +98,7 @@ const Test = () => {
       >
         {questions[currentQuestion]}
       </Canvas>
+
       {/* <section className="w-screen h-screen">
         <Canvas
           className="w-screen h-screen bg-red-500 bg-opacity-30"
