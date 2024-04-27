@@ -3,9 +3,14 @@ import Question from "./questions/Question";
 import Trip from "@/models/Trip";
 import Classroom from "@/models/Classroom";
 import { useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Html, OrbitControls } from "@react-three/drei";
 import SeSi from "./questions/SeSi";
+import TeTi from "./questions/TeTi";
+import FeTe from "./questions/FeTe";
+import Desk from "@/models/Desk";
+import FeFi from "./questions/FeFi";
+import GirlCrying from "@/models/CryingGirl";
 
 const Test = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -25,7 +30,7 @@ const Test = () => {
     return null;
   };
 
-  const questions = [<SeSi />, <SeSi />];
+  const questions = [<SeSi />, <TeTi />, <FeFi />, <FeTe />];
   const scenes = [
     <Trip
       // previousQuestion={previousQuestion}
@@ -38,6 +43,18 @@ const Test = () => {
       nextQuestion={nextQuestion}
       scale={[0.004, 0.004, 0.004]}
       position={[0, 0.05, -0.1]}
+    />,
+    <Desk
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[1, 1, 1]}
+      position={[5, 0, 0]}
+    />,
+    <GirlCrying
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[1, 1, 1]}
+      position={[1, 0, 0]}
     />,
   ];
 
@@ -66,6 +83,21 @@ const Test = () => {
       >
         {questions[currentQuestion]}
       </Canvas>
+      {/* <section className="w-screen h-screen">
+        <Canvas
+          className="w-screen h-screen bg-red-500 bg-opacity-30"
+          camera={{
+            near: 0.1,
+            far: 2000,
+            position: [53, 132, 210],
+          }}
+        >
+          <OrbitControls enableZoom={true} />
+          <Desk scale={[1,1,1]} position={[5,0,0]}/>
+          <directionalLight position={[1, 1, 1]} intensity={3} />
+          <ambientLight intensity={0.5} />
+        </Canvas>
+      </section> */}
       {scenes[currentQuestion]}
     </section>
   );

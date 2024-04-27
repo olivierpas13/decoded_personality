@@ -1,9 +1,6 @@
 import { Children, cloneElement } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
-import { useState } from "react";
-import { useEffect } from "react";
-
 const QuestionTest = ({
   children,
   cameraPosition,
@@ -14,6 +11,8 @@ const QuestionTest = ({
   const addAnswer = () => {
     console.log("answer");
   };
+
+
   return (
     <section className="w-screen h-screen">
       <Canvas
@@ -24,17 +23,19 @@ const QuestionTest = ({
           position: cameraPosition,
         }}
       >
-        {/* <OrbitControls
-        enableZoom={false}
-        /> */}
         <OrbitControls
+        enableZoom={true}
+        />
+        {/* <OrbitControls
           enableZoom={false}
           enableDamping={true}
           minPolarAngle={Math.PI / 4}
           maxPolarAngle={Math.PI / 2.5}
-        />
-        {Children.map(children, (child) => {
+        /> */}
+        {
+        Children.map(children, (child) => {
           return cloneElement(child, { addAnswer });
+          
         })}
         <directionalLight position={[1, 1, 1]} intensity={3} />
         <ambientLight intensity={0.5} />

@@ -29,6 +29,7 @@ const Trip = ({ addAnswer, nextQuestion, ...props }) => {
   //   addAnswer(current);
   // }, [current]);
 
+
   return (
 
     <QuestionTest
