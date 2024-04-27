@@ -4,7 +4,7 @@ const FeFi = () => {
   return (
     <QuestionText
       question={
-        "A friend is expressing her feelings to you. What do you tend to do?:"
+        "A friend is expressing her feelings to you. What do you tend to do?"
       }
       firstOpt={
         "Feel like you instantly connect with what your friend is feeling, even if you don't understand the exact reason behind it"

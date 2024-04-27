@@ -24,7 +24,7 @@ const QuestionTest = ({
         }}
       >
         <OrbitControls
-        enableZoom={true}
+        // enableZoom={true}
         />
         {/* <OrbitControls
           enableZoom={false}
