@@ -4,13 +4,13 @@ const FeFi = () => {
   return (
     <QuestionText
       question={
-        "You are with a friend who is expressing a feeling. If you want to understand how she feels, in most cases do you:"
+        "A friend is expressing her feelings to you. What do you tend to do?:"
       }
       firstOpt={
-        "Do you usually feel like you instantly connect with what your friend is feeling, even if you don't understand the exact reason behind it?"
+        "Feel like you instantly connect with what your friend is feeling, even if you don't understand the exact reason behind it"
       }
       secondOpt={
-        "Do you find yourself taking a moment to consider your friend's feelings, maybe relating them to your own similar experiences for a deeper understanding?"
+        "Find yourself taking a moment to consider your friend's feelings, maybe relating them to your own similar experiences for a deeper understanding"
       }
     />
   );

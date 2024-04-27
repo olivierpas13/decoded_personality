@@ -19,7 +19,7 @@ const QuestionTest = ({
         className="w-screen h-screen bg-transparent"
         camera={{
           near: 0.1,
-          far: 1000,
+          far: 2000,
           position: cameraPosition,
         }}
       >

@@ -44,17 +44,17 @@ const Test = () => {
       scale={[0.004, 0.004, 0.004]}
       position={[0, 0.05, -0.1]}
     />,
+    <GirlCrying
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[0.5, 0.5, 0.5]}
+      position={[2, -8, 1]}
+    />,
     <Desk
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
       position={[5, 0, 0]}
-    />,
-    <GirlCrying
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[1, 1, 1]}
-      position={[1, 0, 0]}
     />,
   ];
 
@@ -89,11 +89,11 @@ const Test = () => {
           camera={{
             near: 0.1,
             far: 2000,
-            position: [53, 132, 210],
+            position: [-48, 49, -102],
           }}
         >
           <OrbitControls enableZoom={true} />
-          <Desk scale={[1,1,1]} position={[5,0,0]}/>
+          <GirlCrying scale={[0.5,0.5,0.5]} position={[2,-6,1]}/>
           <directionalLight position={[1, 1, 1]} intensity={3} />
           <ambientLight intensity={0.5} />
         </Canvas>
