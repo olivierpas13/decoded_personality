@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 const Navbar = ({ children }) => {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className=" navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown z-50">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
