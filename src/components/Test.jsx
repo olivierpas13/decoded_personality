@@ -14,6 +14,11 @@ import GirlCrying from "@/models/CryingGirl";
 import Alley from "@/models/Alley";
 import Detective from "@/models/Detective";
 import NeSe from "./questions/NeSe";
+import Matilda from "@/models/Matilda";
+import FiTi from "./questions/FiTi";
+import NiSi from "./questions/NiSi";
+import Beach from "./Beach";
+import NeNi from "./questions/NeNi";
 
 const Test = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -33,10 +38,19 @@ const Test = () => {
     return null;
   };
 
-  const questions = [<SeSi />, <TeTi />, <FeFi />, <FeTe />, <NeSe/>];
+  const questions = [
+    <SeSi />,
+    <TeTi />,
+    <FeFi />,
+    <FeTe />,
+    <NeSe />,
+    <FiTi />,
+    <NiSi />,
+    <NeNi/>
+  ];
   const scenes = [
     <Trip
-      // previousQuestion={previousQuestion}
+      previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[10, 10, 10]}
       position={[0.2, 0.2, 0.3]}
@@ -65,12 +79,24 @@ const Test = () => {
       scale={[2, 2, 2]}
       position={[0, -0.05, 0]}
     />,
-    // <Alley
-    //   previousQuestion={previousQuestion}
-    //   nextQuestion={nextQuestion}
-    //   scale={[1, 1, 1]}
-    //   position={[0, 0, 0]}
-    // />,
+    <Matilda
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[1, 1, 1]}
+      position={[0, -55, 0]}
+    />,
+    <Alley
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[1.5, 1.5, 1.5]}
+      position={[0, -35, -147]}
+    />,
+    <Beach
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      scale={[1, 1, 1]}
+      position={[-60, -90, -120]}
+    />,
   ];
 
   return (
@@ -98,22 +124,6 @@ const Test = () => {
       >
         {questions[currentQuestion]}
       </Canvas>
-
-      {/* <section className="w-screen h-screen">
-        <Canvas
-          className="w-screen h-screen bg-red-500 bg-opacity-30"
-          camera={{
-            near: 0.1,
-            far: 2000,
-            position: [-48, 49, -102],
-          }}
-        >
-          <OrbitControls enableZoom={true} />
-          <GirlCrying scale={[0.5,0.5,0.5]} position={[2,-6,1]}/>
-          <directionalLight position={[1, 1, 1]} intensity={3} />
-          <ambientLight intensity={0.5} />
-        </Canvas>
-      </section> */}
       {scenes[currentQuestion]}
     </section>
   );

@@ -23,15 +23,15 @@ const QuestionTest = ({
           position: cameraPosition,
         }}
       >
-        <OrbitControls
-        // enableZoom={true}
-        />
         {/* <OrbitControls
+        enableZoom={true}
+        /> */}
+        <OrbitControls
           enableZoom={false}
           enableDamping={true}
           minPolarAngle={Math.PI / 4}
           maxPolarAngle={Math.PI / 2.5}
-        /> */}
+        />
         {
         Children.map(children, (child) => {
           return cloneElement(child, { addAnswer });
