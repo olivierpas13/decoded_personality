@@ -1,7 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import detectiveScene from "../assets/detective.glb";
 import { useRef } from "react";
-import QuestionTest from "@/components/questions/QuestionTest";
+import QuestionTest from "@/components/questions/QuestionContainer";
 
 const Detective = ({ nextQuestion, previousQuestion, ...props }) => {
   const ref = useRef();

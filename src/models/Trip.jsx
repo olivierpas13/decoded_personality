@@ -5,47 +5,22 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-Trips/milk-delivery-b41e30c422d943409291050b77364568
 Title: Milk Delivery
 */
-import QuestionTest from "@/components/questions/QuestionTest";
+import QuestionTest from "@/components/questions/QuestionContainer";
 import tripScene from "../assets/milk_delivery.glb";
-import {
-  OrbitControls,
-  useGLTF,
-  Html,
-  PerspectiveCamera,
-} from "@react-three/drei";
-import { useState } from "react";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 
-const Trip = ({ addAnswer, nextQuestion, ...props }) => {
-  const { nodes, materials, animations, scene } = useGLTF(tripScene);
-
-  const [current, setCurrent] = useState(null);
-
-
-  // const addAnswer = () =>{
-  //   console.log("answer");
-  // }
-
-  // useEffect(() => {
-  //   addAnswer(current);
-  // }, [current]);
-
+const Trip = ({ addAnswer, nextQuestion, previousQuestion, ...props }) => {
+  const { nodes, materials } = useGLTF(tripScene);
 
   return (
-
     <QuestionTest
       cameraPosition={[1.3, 0.4, -0.06]}
       currentQuestion={0}
       nextQuestion={nextQuestion}
-      previousQuestion={console.log("before")}
+      previousQuestion={previousQuestion}
     >
       <group {...props} dispose={null}>
         <group scale={0.01}>
-          <OrbitControls
-            enableZoom={false}
-            enableDamping={true}
-            minPolarAngle={Math.PI / 4}
-            maxPolarAngle={Math.PI / 2}
-          />
           <group
             position={[-27.872, 2.315, -11.003]}
             rotation={[-3.132, -1.182, -3.052]}

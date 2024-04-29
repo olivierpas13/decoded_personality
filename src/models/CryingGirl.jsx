@@ -9,7 +9,7 @@ Title: The Long-Awaited Crying - female sculptrue
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import girlCryingScene from "../assets/girlCrying.glb";
-import QuestionTest from "@/components/questions/QuestionTest";
+import QuestionTest from "@/components/questions/QuestionContainer";
 import { useFrame } from "@react-three/fiber";
 import Logger from "@/utils/Logger";
 

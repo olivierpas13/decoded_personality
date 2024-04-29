@@ -17,11 +17,16 @@ import NeSe from "./questions/NeSe";
 import Matilda from "@/models/Matilda";
 import FiTi from "./questions/FiTi";
 import NiSi from "./questions/NiSi";
-import Beach from "./Beach";
+import Beach from "../models/Beach";
 import NeNi from "./questions/NeNi";
 
 const Test = () => {
+  const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  const addAnswer = (ans) => {
+    answers[currentQuestion] = ans;
+  };
 
   const nextQuestion = () => {
     if (questions.length <= currentQuestion) {
@@ -39,14 +44,14 @@ const Test = () => {
   };
 
   const questions = [
-    <SeSi />,
+    <SeSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
     <TeTi />,
     <FeFi />,
     <FeTe />,
     <NeSe />,
     <FiTi />,
     <NiSi />,
-    <NeNi/>
+    <NeNi />,
   ];
   const scenes = [
     <Trip
@@ -115,7 +120,8 @@ const Test = () => {
           {"next".toUpperCase()}
         </button>
       </div>
-      <Canvas
+      {questions[currentQuestion]}
+      {/* <Canvas
         style={{
           width: "100%",
           height: "100%",
@@ -123,7 +129,7 @@ const Test = () => {
         }}
       >
         {questions[currentQuestion]}
-      </Canvas>
+      </Canvas> */}
       {scenes[currentQuestion]}
     </section>
   );

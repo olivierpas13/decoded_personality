@@ -1,7 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import matildaScene from "../assets/matilda.glb";
 import { useRef } from "react";
-import QuestionTest from "@/components/questions/QuestionTest";
+import QuestionTest from "@/components/questions/QuestionContainer";
 import Logger from "@/utils/Logger";
 
 const Matilda = ({ nextQuestion, previousQuestion, ...props }) => {

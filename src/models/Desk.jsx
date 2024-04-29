@@ -9,7 +9,7 @@ Title: Low Poly Computer Desk
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import deskScene from "../assets/desk.glb";
-import QuestionTest from "@/components/questions/QuestionTest";
+import QuestionTest from "@/components/questions/QuestionContainer";
 
 const Desk = ({ nextQuestion, previousQuestion, ...props }) => {
   const { nodes, materials } = useGLTF(deskScene);

@@ -1,7 +1,7 @@
 import { Children, cloneElement } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
-const QuestionTest = ({
+const QuestionContainer = ({
   children,
   cameraPosition,
   nextQuestion,
@@ -44,4 +44,4 @@ const QuestionTest = ({
   );
 };
 
-export default QuestionTest;
+export default QuestionContainer;
