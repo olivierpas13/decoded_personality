@@ -14,9 +14,7 @@ const Beach = ({ nextQuestion, previousQuestion, ...props }) => {
   const { nodes, materials } = useGLTF(beachScene);
   return (
     <QuestionTest
-      cameraPosition={[
-        -21,9.5,14.5
-      ]}
+      cameraPosition={[-21, 9.5, 14.5]}
       currentQuestion={1}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}

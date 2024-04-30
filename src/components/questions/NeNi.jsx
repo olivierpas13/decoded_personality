@@ -8,12 +8,14 @@ const NeNi = ({ addAnswer, nextQuestion }) => {
       }
       firstOpt={{
         value: "ni",
-        text: "Plan ahead activities and places to go thinking about what coould go wrong or right, you like to have structure"
+        text: "Plan ahead activities to do and places to go but thinking about what could go wrong or right, you like to have structure",
       }}
       secondOpt={{
         value: "ne",
-        text:"Let things flow, imagine many ideas about what to do and where to go to pick one, you like to brainstorm ideas and have freedom "
+        text: "Let things flow, you don't like to overstress planning, you like to brainstorm ideas about what to do and to have the freedom to choose",
       }}
+      addAnswer={addAnswer}
+      nextQuestion={nextQuestion}
     />
   );
 };

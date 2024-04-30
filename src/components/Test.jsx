@@ -1,10 +1,6 @@
 import { useState } from "react";
-import Question from "./questions/Question";
 import Trip from "@/models/Trip";
 import Classroom from "@/models/Classroom";
-import { useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Html, OrbitControls } from "@react-three/drei";
 import SeSi from "./questions/SeSi";
 import TeTi from "./questions/TeTi";
 import FeTe from "./questions/FeTe";
@@ -19,18 +15,39 @@ import FiTi from "./questions/FiTi";
 import NiSi from "./questions/NiSi";
 import Beach from "../models/Beach";
 import NeNi from "./questions/NeNi";
+import MultipleModelsContainer from "@/models/MultipleModelsContainer";
+import Rainbow from "@/models/Rainbow";
+import { useRef } from "react";
+import Backpack from "@/models/Backpack";
+import Knife from "@/models/Knife";
+import Calendar from "@/models/Calendar";
+import Bonsai from "@/models/Bonsai";
+import Microphone from "@/models/Microphone";
+import Psychology from "@/models/Psychology";
+import Toolbox from "@/models/Toolbox";
+import { determineMBTI } from "@/utils/determineMBTI";
 
 const Test = () => {
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState({
+    cognitives: [],
+    middleZone: "",
+  });
+  const ref = useRef();
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const addAnswer = (ans) => {
-    answers[currentQuestion] = ans;
+    answers.cognitives[currentQuestion] = ans;
+  };
+
+  const addMiddleZone = (zone) => {
+    answers.middleZone = zone;
   };
 
   const nextQuestion = () => {
-    if (questions.length <= currentQuestion) {
-      setCurrentQuestion(currentQuestion + 1);
+    if (scenes.length <= currentQuestion) {
+      console.log(answers);
+
+      console.log(determineMBTI(answers));
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }
@@ -45,14 +62,114 @@ const Test = () => {
 
   const questions = [
     <SeSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <TeTi />,
-    <FeFi />,
-    <FeTe />,
-    <NeSe />,
-    <FiTi />,
-    <NiSi />,
-    <NeNi />,
+    <TeTi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeFi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeTe addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeSe addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FiTi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NiSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeNi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
   ];
+
+  const middleZones = [
+    {
+      id: 1,
+      component: Rainbow,
+      title: "Prudent Optimism",
+      cameraPosition: [25, 45, -70],
+      backgroundColor: "#feabda",
+      properties: [
+        "You see the potential for positive outcomes.",
+        "You believe in your ability to overcome challenges.",
+        "You view setbacks as temporary, not the end of the road.",
+      ],
+    },
+    {
+      id: 2,
+      component: Backpack,
+      title: "Overpersonalization",
+      cameraPosition: [-30, 20, -30],
+      backgroundColor: "#e1ca96",
+      properties: [
+        "You have a unique perspective on the world.",
+        "You find creative solutions to everyday problems.",
+        "You prefer your own methods, even if they seem unconventional.",
+      ],
+    },
+    {
+      id: 3,
+      component: Knife,
+      title: "Principled Utilitarian",
+      cameraPosition: [0, 200, -100],
+      backgroundColor: "#c4e3cb",
+      properties: [
+        "You prioritize solutions that are both effective and ethical.",
+        "You believe the ends don't always justify the means.",
+        "You value long-term consequences over immediate gains.",
+      ],
+    },
+    {
+      id: 4,
+      component: Calendar,
+      title: "Tangible Projection",
+      cameraPosition: [-10, 15, 18],
+      backgroundColor: "#e6e2d3",
+      properties: [
+        "You prefer plans with achievable goals and clear milestones.",
+        "You are grounded in reality and avoid overly ambitious plans.",
+        "You appreciate projects that show steady, tangible progress.",
+      ],
+    },
+    {
+      id: 5,
+      component: Bonsai,
+      title: "Cautious Renovation",
+      cameraPosition: [10, 15, 15],
+      backgroundColor: "#c4e3cb",
+      properties: [
+        "You enjoy experimenting with new ideas within familiar domains. ",
+        "You seek gradual improvements to your routines and habits.",
+        "You prefer controlled change over radical transformations.",
+      ],
+    },
+    {
+      id: 6,
+      component: Microphone,
+      title: "Eloquent Charisma",
+      cameraPosition: [10, 10, 10],
+      backgroundColor: "#bad7df",
+      properties: [
+        "You excel at explaining complex ideas clearly. ",
+        "You are usually good at talking or debating people.",
+        "People perceive you as articulate and quick-witted.",
+      ],
+    },
+    {
+      id: 7,
+      component: Psychology,
+      title: "Empathetic Critic",
+      cameraPosition: [25, 150, 19],
+      backgroundColor: "#424242",
+      properties: [
+        "You understand the motivations behind people's actions.",
+        "You can analyze behaviors to determine their underlying causes.",
+        "You gain insights into your own past behaviors with maturity.",
+      ],
+    },
+    {
+      id: 8,
+      component: Toolbox,
+      title: "Selective Functionality",
+      cameraPosition: [0, 20, 70],
+      backgroundColor: "#ffb4a2",
+      properties: [
+        "You are intensely focused on the tasks that interest you.",
+        "You can achieve remarkable results in your chosen areas.",
+        "You might surprise others with your dedication to specific skills.",
+      ],
+    },
+  ];
+
   const scenes = [
     <Trip
       previousQuestion={previousQuestion}
@@ -101,6 +218,11 @@ const Test = () => {
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
       position={[-60, -90, -120]}
+    />,
+    <MultipleModelsContainer
+      addMiddleZone={addMiddleZone}
+      reference={ref}
+      models={middleZones}
     />,
   ];
 

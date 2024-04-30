@@ -12,8 +12,10 @@ const FiTi = ({ addAnswer, nextQuestion }) => {
       }}
       secondOpt={{
         value: "ti",
-        text: "You explain it based on your own logical conclusions, you don't need any personal identity reason behind it"
+        text: "You explain it based on your own logical conclusions, you don't need any personal identity reason behind it",
       }}
+      addAnswer={addAnswer}
+      nextQuestion={nextQuestion}
     />
   );
 };

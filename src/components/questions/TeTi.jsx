@@ -1,9 +1,8 @@
 // Te vs Ti Question
 
-import { Html } from "@react-three/drei";
 import QuestionText from "./QuestionText";
 
-const TeTi = () => {
+const TeTi = ({ addAnswer, nextQuestion })  => {
   return (
     <QuestionText
       question={
@@ -17,6 +16,8 @@ const TeTi = () => {
         value: "te",
         text: "Trying to think about ways to use it and how can you use it more efficiently",
       }}
+      addAnswer={addAnswer}
+      nextQuestion={nextQuestion}
     />
   );
 };

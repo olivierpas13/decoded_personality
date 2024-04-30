@@ -1,6 +1,6 @@
 import QuestionText from "./QuestionText";
 
-const NiSi = () => {
+const NiSi = ({ addAnswer, nextQuestion }) => {
   return (
     <QuestionText
       question={
@@ -14,6 +14,8 @@ const NiSi = () => {
         value: "si",
         text: "You decide to get there walking through familiar streets, you prefer what you already know",
       }}
+      addAnswer={addAnswer}
+      nextQuestion={nextQuestion}
     />
   );
 };

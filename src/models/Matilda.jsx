@@ -2,7 +2,6 @@ import { useGLTF } from "@react-three/drei";
 import matildaScene from "../assets/matilda.glb";
 import { useRef } from "react";
 import QuestionTest from "@/components/questions/QuestionContainer";
-import Logger from "@/utils/Logger";
 
 const Matilda = ({ nextQuestion, previousQuestion, ...props }) => {
   const ref = useRef();
@@ -18,7 +17,6 @@ const Matilda = ({ nextQuestion, previousQuestion, ...props }) => {
       <mesh {...props} ref={ref}>
         <primitive object={scene} />
       </mesh>
-      <Logger/>
     </QuestionTest>
   );
 };

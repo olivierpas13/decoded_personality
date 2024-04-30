@@ -9,7 +9,6 @@ Title: Alley
 import { useGLTF } from "@react-three/drei";
 import alleyScene from "../assets/alley.glb";
 import QuestionTest from "@/components/questions/QuestionContainer";
-import Logger from "@/utils/Logger";
 
 const Alley = ({ nextQuestion, previousQuestion, ...props }) => {
   const { nodes, materials } = useGLTF(alleyScene);
@@ -150,7 +149,6 @@ const Alley = ({ nextQuestion, previousQuestion, ...props }) => {
           />
         </group>
       </group>
-      <Logger/>
     </QuestionTest>
   );
 };

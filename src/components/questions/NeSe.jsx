@@ -1,6 +1,6 @@
 import QuestionText from "./QuestionText";
 
-const NeSe = () => {
+const NeSe = ({ addAnswer, nextQuestion }) => {
   return (
     <QuestionText
       question={
@@ -14,6 +14,9 @@ const NeSe = () => {
         value: "se",
         text: "Generate realistic theories using the tangible information about what you know and see, you need to act quickly",
       }}
+      addAnswer={addAnswer}
+      nextQuestion={nextQuestion}
+
     />
   );
 };
