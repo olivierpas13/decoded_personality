@@ -26,8 +26,9 @@ import Microphone from "@/models/Microphone";
 import Psychology from "@/models/Psychology";
 import Toolbox from "@/models/Toolbox";
 import { determineMBTI } from "@/utils/determineMBTI";
-
+import { useNavigate } from "@tanstack/react-router";
 const Test = () => {
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({
     cognitives: [],
     middleZone: "",
@@ -44,10 +45,16 @@ const Test = () => {
   };
 
   const nextQuestion = () => {
-    if (scenes.length <= currentQuestion) {
+    if (scenes.length <= currentQuestion + 1) {
       console.log(answers);
 
       console.log(determineMBTI(answers));
+
+      if (determineMBTI(answers)) {
+        navigate({
+          to: `/results/${determineMBTI(answers)}`,
+        });
+      }
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }

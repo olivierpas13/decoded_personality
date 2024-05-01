@@ -14,6 +14,8 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
 
   const [activeViewIndex, setActiveViewIndex] = useState(0);
 
+  const [selected, setSelected] = useState("");
+
   return (
     <>
       {models.map((model, index) => (
@@ -25,14 +27,17 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
                 <li key={index}>{property}</li>
               ))}
             </ul>
-            <button
-              className="btn btn-neutral mt-4"
-              onClick={() => {
-                addMiddleZone(model.title);
-              }}
-            >
-              {"select".toUpperCase()}
-            </button>
+            <form method="dialog">
+              <button
+                className="btn btn-neutral mt-4"
+                onClick={() => {
+                  setSelected(model.title);
+                  addMiddleZone(selected);
+                }}
+              >
+                {"select".toUpperCase()}
+              </button>
+            </form>
           </div>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>
@@ -44,7 +49,7 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
         {models.map((model, index) => (
           <h4
             key={index}
-            className="mt-0 z-20 text-center bg-black-500 text-white border bg-opacity-50 rounded h-fit p-2"
+            className={`mt-0 z-20 text-center ${selected == model.title ? "bg-black-500 text-white" : "bg-slate-100 text-blue-950"} border bg-opacity-50 rounded h-fit p-2`}
             onClick={() => setActiveViewIndex(index)}
           >
             {model.title}
@@ -58,7 +63,6 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
             key={model.id}
             index={index + 1}
             onClick={() => {
-              console.log("modal" + index);
               document.getElementById("modal" + index).showModal();
             }}
             // onClick={() => console.log(model.title)}

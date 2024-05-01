@@ -13,6 +13,22 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as TestImport } from './routes/test'
 import { Route as IndexImport } from './routes/index'
+import { Route as ResultsIstpImport } from './routes/results/istp'
+import { Route as ResultsIstjImport } from './routes/results/istj'
+import { Route as ResultsIsfpImport } from './routes/results/isfp'
+import { Route as ResultsIsfjImport } from './routes/results/isfj'
+import { Route as ResultsIntpImport } from './routes/results/intp'
+import { Route as ResultsIntjImport } from './routes/results/intj'
+import { Route as ResultsInfpImport } from './routes/results/infp'
+import { Route as ResultsInfjImport } from './routes/results/infj'
+import { Route as ResultsEstpImport } from './routes/results/estp'
+import { Route as ResultsEstjImport } from './routes/results/estj'
+import { Route as ResultsEsfpImport } from './routes/results/esfp'
+import { Route as ResultsEsfjImport } from './routes/results/esfj'
+import { Route as ResultsEntpImport } from './routes/results/entp'
+import { Route as ResultsEntjImport } from './routes/results/entj'
+import { Route as ResultsEnfpImport } from './routes/results/enfp'
+import { Route as ResultsEnfjImport } from './routes/results/enfj'
 
 // Create/Update Routes
 
@@ -23,6 +39,86 @@ const TestRoute = TestImport.update({
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIstpRoute = ResultsIstpImport.update({
+  path: '/results/istp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIstjRoute = ResultsIstjImport.update({
+  path: '/results/istj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIsfpRoute = ResultsIsfpImport.update({
+  path: '/results/isfp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIsfjRoute = ResultsIsfjImport.update({
+  path: '/results/isfj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIntpRoute = ResultsIntpImport.update({
+  path: '/results/intp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsIntjRoute = ResultsIntjImport.update({
+  path: '/results/intj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsInfpRoute = ResultsInfpImport.update({
+  path: '/results/infp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsInfjRoute = ResultsInfjImport.update({
+  path: '/results/infj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEstpRoute = ResultsEstpImport.update({
+  path: '/results/estp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEstjRoute = ResultsEstjImport.update({
+  path: '/results/estj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEsfpRoute = ResultsEsfpImport.update({
+  path: '/results/esfp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEsfjRoute = ResultsEsfjImport.update({
+  path: '/results/esfj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEntpRoute = ResultsEntpImport.update({
+  path: '/results/entp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEntjRoute = ResultsEntjImport.update({
+  path: '/results/entj',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEnfpRoute = ResultsEnfpImport.update({
+  path: '/results/enfp',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ResultsEnfjRoute = ResultsEnfjImport.update({
+  path: '/results/enfj',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -38,11 +134,94 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestImport
       parentRoute: typeof rootRoute
     }
+    '/results/enfj': {
+      preLoaderRoute: typeof ResultsEnfjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/enfp': {
+      preLoaderRoute: typeof ResultsEnfpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/entj': {
+      preLoaderRoute: typeof ResultsEntjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/entp': {
+      preLoaderRoute: typeof ResultsEntpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/esfj': {
+      preLoaderRoute: typeof ResultsEsfjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/esfp': {
+      preLoaderRoute: typeof ResultsEsfpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/estj': {
+      preLoaderRoute: typeof ResultsEstjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/estp': {
+      preLoaderRoute: typeof ResultsEstpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/infj': {
+      preLoaderRoute: typeof ResultsInfjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/infp': {
+      preLoaderRoute: typeof ResultsInfpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/intj': {
+      preLoaderRoute: typeof ResultsIntjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/intp': {
+      preLoaderRoute: typeof ResultsIntpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/isfj': {
+      preLoaderRoute: typeof ResultsIsfjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/isfp': {
+      preLoaderRoute: typeof ResultsIsfpImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/istj': {
+      preLoaderRoute: typeof ResultsIstjImport
+      parentRoute: typeof rootRoute
+    }
+    '/results/istp': {
+      preLoaderRoute: typeof ResultsIstpImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([IndexRoute, TestRoute])
+export const routeTree = rootRoute.addChildren([
+  IndexRoute,
+  TestRoute,
+  ResultsEnfjRoute,
+  ResultsEnfpRoute,
+  ResultsEntjRoute,
+  ResultsEntpRoute,
+  ResultsEsfjRoute,
+  ResultsEsfpRoute,
+  ResultsEstjRoute,
+  ResultsEstpRoute,
+  ResultsInfjRoute,
+  ResultsInfpRoute,
+  ResultsIntjRoute,
+  ResultsIntpRoute,
+  ResultsIsfjRoute,
+  ResultsIsfpRoute,
+  ResultsIstjRoute,
+  ResultsIstpRoute,
+])
 
 /* prettier-ignore-end */

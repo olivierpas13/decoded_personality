@@ -7,7 +7,7 @@ Title: Milk Delivery
 */
 import QuestionTest from "@/components/questions/QuestionContainer";
 import tripScene from "../assets/milk_delivery.glb";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 
 const Trip = ({ addAnswer, nextQuestion, previousQuestion, ...props }) => {
   const { nodes, materials } = useGLTF(tripScene);
