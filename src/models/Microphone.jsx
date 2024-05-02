@@ -6,25 +6,23 @@ Source: https://sketchfab.com/3d-models/vintage-microphone-a5986b39102f47c5b32b2
 Title: Vintage Microphone
 */
 
-import { useGLTF } from '@react-three/drei'
-import microphoneScene from "../assets/microphone.glb"
+import { useGLTF } from "@react-three/drei";
+import microphoneScene from "../assets/microphone.glb";
 
 const Microphone = (props) => {
-  const { nodes, materials } = useGLTF(microphoneScene)
+  const { nodes, materials } = useGLTF(microphoneScene);
   return (
     <group {...props} dispose={null}>
-      <group scale={0.01}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Circle__0.geometry}
-          material={materials['Scene_-_Root']}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={[84.859, 84.859, 100]}
-        />
-      </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Circle__0.geometry}
+        material={materials["Scene_-_Root"]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={[0.849, 0.849, 1]}
+      />
     </group>
-  )
-}
+  );
+};
 
 export default Microphone;

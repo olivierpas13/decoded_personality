@@ -13,16 +13,13 @@ const Toolbox = (props) => {
   const { nodes, materials } = useGLTF(toolboxScene);
   return (
     <group {...props} dispose={null}>
-      <group scale={0.01}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.box_a_LP_box_a_0.geometry}
-          material={materials.box_a}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={100}
-        />
-      </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.box_a_LP_box_a_0.geometry}
+        material={materials.box_a}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
     </group>
   );
 };

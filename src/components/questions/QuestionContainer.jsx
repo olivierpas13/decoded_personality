@@ -8,10 +8,6 @@ const QuestionContainer = ({
   previousQuestion,
   currentQuestion,
 }) => {
-  const addAnswer = () => {
-    console.log("answer");
-  };
-
 
   return (
     <section className="w-screen h-screen">
@@ -19,13 +15,10 @@ const QuestionContainer = ({
         className="w-screen h-screen bg-transparent"
         camera={{
           near: 0.1,
-          far: 2000,
+          far: 1000,
           position: cameraPosition,
         }}
       >
-        {/* <OrbitControls
-        enableZoom={true}
-        /> */}
         <OrbitControls
           enableZoom={false}
           enableDamping={true}
@@ -34,11 +27,11 @@ const QuestionContainer = ({
         />
         {
         Children.map(children, (child) => {
-          return cloneElement(child, { addAnswer });
+          return cloneElement(child);
           
         })}
         <directionalLight position={[1, 1, 1]} intensity={3} />
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={1} />
       </Canvas>
     </section>
   );

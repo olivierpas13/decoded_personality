@@ -6,185 +6,68 @@ Source: https://sketchfab.com/3d-models/the-long-awaited-crying-female-sculptrue
 Title: The Long-Awaited Crying - female sculptrue
 */
 
-import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import girlCryingScene from "../assets/girlCrying.glb";
-import QuestionTest from "@/components/questions/QuestionContainer";
-import { useFrame } from "@react-three/fiber";
+import girlScene from "../assets/girlCrying.glb";
+import QuestionContainer from "@/components/questions/QuestionContainer";
+import Logger from "@/utils/Logger";
 
-const GirlCrying = ({ nextQuestion, previousQuestion, ...props })  => {
-  const { nodes, materials } = useGLTF(girlCryingScene);
-  
+const GirlCrying = ({ nextQuestion, previousQuestion, ...props }) => {
+  const { nodes, materials } = useGLTF(girlScene);
   return (
-    <QuestionTest
-      cameraPosition={[-52, 63, -108]}
+    <QuestionContainer
+      cameraPosition={[-40, 51, -102]}
       currentQuestion={3}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}
     >
       <group {...props} dispose={null}>
-        <group position={[0, 0, -51.173]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.floor_floor_0.geometry}
-            material={materials.floor}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.edge_edge_0.geometry}
-            material={materials.edge}
-            position={[0, -3.889, 104.997]}
-          />
-        </group>
-        <group position={[-37.942, 24.308, 0.586]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.wood_3_wood_0.geometry}
-            material={materials.wood}
-            position={[0, 47.829, 15.884]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.wood_2_wood1_0.geometry}
-            material={materials["wood.1"]}
-            position={[0, 41.128, 2.529]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.wood_1_wood_0.geometry}
-            material={materials.wood_0}
-            position={[0, 34.427, -10.825]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.metal_metal_0.geometry}
-            material={materials.metal}
-            position={[0, 23.429, -2.475]}
-          />
-        </group>
-        <group position={[-4.453, 0, -38.026]} rotation={[0, -0.36, 0]}>
-          <group position={[-1.357, 17.644, 20.318]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.clothes_1_clothes_0.geometry}
-              material={materials.clothes}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.clothes_1_clothes_0_1.geometry}
-              material={materials.clothes}
-            />
-          </group>
-          <group position={[-1.357, 17.644, 20.318]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.dress_dress_0.geometry}
-              material={materials.dress}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.dress_dress_0_1.geometry}
-              material={materials.dress}
-            />
-          </group>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.ring_ring_0.geometry}
-            material={materials.ring}
-            position={[17.019, 89.397, 1.04]}
-            rotation={[0, 0.975, 0]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.neckware_neckware_0.geometry}
-            material={materials.neckware}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.l_eye_l_eye_0.geometry}
-            material={materials.l_eye}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.r_eye_r_eye_0.geometry}
-            material={materials.r_eye}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.hair_hair_0.geometry}
-            material={materials.hair}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.teeth_teeth_0.geometry}
-            material={materials.teeth}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.underware_underware_0.geometry}
-            material={materials.underware}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.brow_brow_0.geometry}
-            material={materials.brow}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.tear_tear_0.geometry}
-            material={materials.tear}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.high_heel_high_heel_0.geometry}
-            material={materials.high_heel}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.body_body_0.geometry}
-            material={materials.body}
-            position={[-1.357, 17.644, 20.318]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.nail_nail_0.geometry}
-            material={materials.nail}
-            position={[-1.357, 17.644, 20.318]}
-          />
-        </group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.floor_floor_0.geometry}
+          material={materials.floor}
+          position={[0, 0, -51.173]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.edge_edge_0.geometry}
+          material={materials.edge}
+          position={[0, -3.889, 53.824]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.wood_3_wood_0.geometry}
+          material={materials.wood}
+          position={[-37.942, 72.137, 16.47]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.neckware_neckware_0.geometry}
+          material={materials.PaletteMaterial003}
+          position={[-12.886, 17.644, -19.491]}
+          rotation={[0, -0.36, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.neckware_neckware_0.geometry}
+          material={materials.PaletteMaterial001}
+          position={[-12.886, 17.644, -19.491]}
+          rotation={[0, -0.36, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.tear_tear_0.geometry}
+          material={materials.PaletteMaterial001}
+          position={[-12.886, 17.644, -19.491]}
+          rotation={[0, -0.36, 0]}
+        />
       </group>
- </QuestionTest>
+    </QuestionContainer>
   );
 };
 

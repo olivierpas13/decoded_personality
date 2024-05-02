@@ -193,8 +193,8 @@ const Test = () => {
     <GirlCrying
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
-      scale={[0.5, 0.5, 0.5]}
-      position={[2, -8, 1]}
+      scale={[0.3, 0.3, 0.3]}
+      position={[-10, 14, -45]}
     />,
     <Desk
       previousQuestion={previousQuestion}
