@@ -9,7 +9,6 @@ Title: The Long-Awaited Crying - female sculptrue
 import { useGLTF } from "@react-three/drei";
 import girlScene from "../assets/girlCrying.glb";
 import QuestionContainer from "@/components/questions/QuestionContainer";
-import Logger from "@/utils/Logger";
 
 const GirlCrying = ({ nextQuestion, previousQuestion, ...props }) => {
   const { nodes, materials } = useGLTF(girlScene);

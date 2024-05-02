@@ -13,54 +13,15 @@ const Rainbow = (props) => {
   const { nodes, materials } = useGLTF(rainbowScene);
   return (
     <group {...props} dispose={null}>
-      <group
-        // position={[0, -77.5, 48.5]}
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_2.geometry}
+        material={materials.PaletteMaterial001}
+        position={[0, -77.5, 48.5]}
         rotation={[-Math.PI, 0, 0]}
         scale={0.091}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2.geometry}
-          material={materials.color_15277357}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_3.geometry}
-          material={materials.color_16089887}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_4.geometry}
-          material={materials.color_16448250}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_5.geometry}
-          material={materials.color_16768282}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_6.geometry}
-          material={materials.color_40919}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_7.geometry}
-          material={materials.color_4634441}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_8.geometry}
-          material={materials.color_8273816}
-        />
-      </group>
+      />
     </group>
   );
 };

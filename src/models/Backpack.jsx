@@ -7,138 +7,18 @@ Title: Cute backpack with cat ears
 */
 
 import { useGLTF } from "@react-three/drei";
-import backpackScene from "../assets/backpack.glb"
+import backpackScene from "../assets/backpack.glb";
 
 const Backpack = (props) => {
   const { nodes, materials } = useGLTF(backpackScene);
   return (
     <group {...props} dispose={null}>
-      <group position={[0.169, 1.297, 0.018]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_10.geometry}
-          material={materials.material_2}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_11.geometry}
-          material={materials.material_3}
-        />
-      </group>
-      <group position={[0.013, 0.301, 0.017]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_17.geometry}
-          material={materials.material_1}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_18.geometry}
-          material={materials.material_4}
-        />
-      </group>
-      
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Object_6.geometry}
-        material={materials.material_1}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_8.geometry}
-        material={materials.material_1}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_13.geometry}
-        material={materials.material_4}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_15.geometry}
-        material={materials.material_1}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_20.geometry}
-        material={materials.material_2}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_22.geometry}
-        material={materials.material_2}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_24.geometry}
-        material={materials.material_5}
-        position={[0.013, 0.301, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_26.geometry}
-        material={materials.material_5}
-        position={[0.013, 0.588, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_28.geometry}
-        material={materials.material_5}
-        position={[-0.349, 0.428, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_30.geometry}
-        material={materials.material_5}
-        position={[-0.221, 0.687, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_32.geometry}
-        material={materials.material_2}
-        position={[-0.221, 0.687, 0.017]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_34.geometry}
-        material={materials.material_6}
-        position={[0.185, 0.185, 0.421]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_36.geometry}
-        material={materials.material_3}
-        position={[0.196, 0.125, 0.442]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_38.geometry}
-        material={materials.material_5}
-        position={[-0.184, 0.856, 0.26]}
+        geometry={nodes.Object_4.geometry}
+        material={materials.PaletteMaterial001}
+        position={[0.175, 0, 0.015]}
       />
     </group>
   );
