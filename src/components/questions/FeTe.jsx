@@ -8,7 +8,7 @@ const FeTe = ({ addAnswer, nextQuestion }) => {
       }
       firstOpt={{
         value: "fe",
-        text: "You try to empathize with him, he can have all the time he needs to grief",
+        text: "You try to empathize with him, he can have a few days to grief. ",
       }}
       secondOpt={{
         value: "te",

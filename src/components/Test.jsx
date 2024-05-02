@@ -27,11 +27,18 @@ import Psychology from "@/models/Psychology";
 import Toolbox from "@/models/Toolbox";
 import { determineMBTI } from "@/utils/determineMBTI";
 import { useNavigate } from "@tanstack/react-router";
+import Compass from "@/models/Compass";
+import Gramophone from "@/models/Gramophone";
+import Families from "./questions/Families";
+import Chess from "@/models/Chess";
+import Heart from "@/models/Heart";
 const Test = () => {
   const navigate = useNavigate();
+
   const [answers, setAnswers] = useState({
     cognitives: [],
     middleZone: "",
+    family: "",
   });
   const ref = useRef();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -42,6 +49,11 @@ const Test = () => {
 
   const addMiddleZone = (zone) => {
     answers.middleZone = zone;
+  };
+
+  const addFamily = (family) => {
+    console.log(family);
+    setAnswers({ ...answers, family: family });
   };
 
   const nextQuestion = () => {
@@ -78,12 +90,67 @@ const Test = () => {
     <NeNi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
   ];
 
+
+  const families = [
+    {
+      id: 1,
+      component: Chess,
+      title: "Analist",
+      cameraPosition: [115, 80, 88],
+      backgroundColor: "#feabda",
+      properties: [
+        "Logical and analytical.",
+        "Good at solving complex problems.",
+        "Objective and impartial in your decision-making.",
+      ],
+    },
+    {
+      id: 2,
+      component: Heart,
+      title: "Idealist",
+      cameraPosition: [405, 445, 1025],
+      backgroundColor: "#e1ca96",
+      properties: [
+        "Creative and imaginative.",
+        "Passionate about your beliefs.",
+        "Empathetic and compassionate.",
+        "Idealistic and optimistic.",
+      ],
+    },
+    {
+      id: 3,
+      component: Compass,
+      title: "Realist",
+      cameraPosition: [520, 1380, -370],
+      backgroundColor: "#c4e3cb",
+      properties: [
+        "Practical and down-to-earth.",
+        "Reliable and responsible.",
+        "Focused on the present and the tangible.",
+        "You like new sensations and experiences.",
+      ],
+    },
+    {
+      id: 4,
+      component: Gramophone,
+      title: "Tradionalist",
+      cameraPosition: [25, 8, 9.5],
+      backgroundColor: "#e6e2d3",
+      properties: [
+        "Loyal and committed to your values.",
+        "Respectful of authority and tradition.",
+        "Cautious and prefer stability.",
+        "If it's not broken, don't fix it.",
+      ],
+    },
+  ];
+
   const middleZones = [
     {
       id: 1,
       component: Rainbow,
       title: "Prudent Optimism",
-      cameraPosition: [25, 45, -70],
+      cameraPosition: [75, -100, -100],
       backgroundColor: "#feabda",
       properties: [
         "You see the potential for positive outcomes.",
@@ -226,10 +293,17 @@ const Test = () => {
       scale={[1, 1, 1]}
       position={[-60, -90, -120]}
     />,
+    <Families
+      previousQuestion={previousQuestion}
+      nextQuestion={nextQuestion}
+      models={families}
+      addFamily={addFamily}
+    />,
     <MultipleModelsContainer
       addMiddleZone={addMiddleZone}
       reference={ref}
       models={middleZones}
+      answers={answers}
     />,
   ];
 
@@ -250,15 +324,6 @@ const Test = () => {
         </button>
       </div>
       {questions[currentQuestion]}
-      {/* <Canvas
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-        }}
-      >
-        {questions[currentQuestion]}
-      </Canvas> */}
       {scenes[currentQuestion]}
     </section>
   );

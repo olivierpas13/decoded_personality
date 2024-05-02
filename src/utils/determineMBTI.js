@@ -1,16 +1,17 @@
-import { mbtiCognitives } from "@/theory/mbtis";
+import { mbtiCognitives, mbtiFamilyTypes } from "@/theory/mbtis";
 
 export function determineMBTI(answers) {
+  console.log(answers);
   const cognitiveFunctions = answers.cognitives;
   const middleZoneOptions = [
-    { name: "Prudent Optimism", types: ["ENFJ", "ENTJ"] },
-    { name: "Overpersonalization", types: ["INTP", "INFP"] },
-    { name: "Principled Utilitarian", types: ["ISTJ", "INTJ"] },
-    { name: "Tangible Projection", types: ["ISTP", "ISFP"] },
-    { name: "Cautious Renovation", types: ["ESTJ", "ESFJ"] },
-    { name: "Eloquent Charisma", types: ["ENTP", "ESTP"] },
-    { name: "Empathetic Critic", types: ["ISFJ", "INFJ"] },
-    { name: "Selective Functionality", types: ["ENFP", "ESFP"] },
+    { name: "Prudent Optimism", functions: ["fe", "te", "ni"] },
+    { name: "Overpersonalization", functions: ["fi", "ti", "ne"] },
+    { name: "Principled Utilitarian", functions: ["si", "ni", "te"] },
+    { name: "Tangible Projection", functions: ["si", "fi", "ti"] },
+    { name: "Cautious Renovation", functions: ["si", "fe", "te"] },
+    { name: "Eloquent Charisma", functions: ["ne", "se", "ti"] },
+    { name: "Empathetic Critic", functions: ["si", "ni", "fe"] },
+    { name: "Selective Functionality", functions: ["ne", "se", "fi"] },
   ];
 
   let maxScore = -1;
@@ -30,19 +31,34 @@ export function determineMBTI(answers) {
   const selectedMiddleZone = answers.middleZone;
   for (const option of middleZoneOptions) {
     if (option.name === selectedMiddleZone) {
-      const types = option.types;
-      if (types.includes(result)) {
-        middleZoneResult = result;
-      } else {
-        middleZoneResult = types.find((type) => type !== result);
-      }
+      const functions = option.functions;
+      cognitiveFunctions.push(...functions);
       break;
     }
   }
 
-  if (middleZoneResult !== "") {
-    finalResult = middleZoneResult;
+  for (const [mbti, functions] of Object.entries(mbtiCognitives)) {
+    let score = functions.filter((f) => cognitiveFunctions.includes(f)).length;
+    if (score > maxScore) {
+      maxScore = score;
+      result = mbti;
+    }
   }
 
+  let familyResult = "";
+
+  const selectedFamilyType = answers.familyType;
+  for (const [mbti, familyTypes] of Object.entries(mbtiFamilyTypes)) {
+    if (familyTypes.includes(selectedFamilyType)) {
+      familyResult = mbti;
+      break;
+    }
+  }
+
+  if (familyResult !== "") {
+    finalResult = familyResult;
+  }
+
+  console.log(finalResult);
   return finalResult;
 }

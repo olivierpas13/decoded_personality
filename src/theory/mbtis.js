@@ -1,4 +1,23 @@
-import { LuSwords } from "react-icons/lu";
+
+
+export const mbtiFamilyTypes = {
+  INFP: ["Diplomats"],
+  INFJ: ["Diplomats"],
+  INTP: ["Analysts"],
+  INTJ: ["Analysts"],
+  ISFP: ["Explorers"],
+  ISFJ: ["Sentinels"],
+  ISTP: ["Explorers"],
+  ISTJ: ["Sentinels"],
+  ENFP: ["Diplomats"],
+  ENFJ: ["Diplomats"],
+  ENTP: ["Analysts"],
+  ENTJ: ["Analysts"],
+  ESFP: ["Explorers"],
+  ESFJ: ["Sentinels"],
+  ESTP: ["Explorers"],
+  ESTJ: ["Sentinels"],
+};
 
 export const mbtiCognitives = {
   ENFJ: ["fe", "ni", "se", "ti"],

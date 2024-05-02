@@ -21,3 +21,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .family-container {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }

@@ -8,7 +8,7 @@ const FiTi = ({ addAnswer, nextQuestion }) => {
       }
       firstOpt={{
         value: "fi",
-        text: "You explain it based on your personal identity, you don't need a logical reason behind it",
+        text: "You explain it based on your personal identity or 'you simply like it because you like it', you don't need a logical reason behind it",
       }}
       secondOpt={{
         value: "ti",
