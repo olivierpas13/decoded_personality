@@ -1,7 +1,7 @@
 export const mbtiFamilies = {
   Idealist: ["ENFP", "INFP", "ENFJ", "INFJ"],
   Analyst: ["ENTP", "INTP", "ENTJ", "INTJ"],
-  Realist: ["ESTP", "ISTP", "ESTJ", "ISTJ"],
+  Realist: ["ESTP", "ISTP", "ESFP", "ISFP"],
   Traditionalist: ["ESFJ", "ISFJ", "ESTJ", "ISTJ"],
 };
 

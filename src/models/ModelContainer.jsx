@@ -1,17 +1,19 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import Logger from "@/utils/Logger";
 
 const ModelContainer = ({ children, cameraPosition }) => {
   return (
-    <section className="w-full h-full">
+    <section className="lg:w-screen lg:h-72" >
       <Canvas
-        className="w-full h-screen bg-transparent"
+        className="w-full bg-transparent"
         camera={{
           near: 0.1,
           far: 1000,
           position: cameraPosition,
         }}
       >
+        <Logger />
         {children}
         <OrbitControls
           enableZoom={false}

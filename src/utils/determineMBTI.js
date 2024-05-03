@@ -7,6 +7,8 @@ export function determineMBTI(answers) {
 
   let cognitiveFunctions = answers.cognitives;
 
+  
+
   const middleZoneOptions = [
     {
       name: "Prudent Optimism",
@@ -67,6 +69,8 @@ export function determineMBTI(answers) {
       ?.functions || [];
 
   cognitiveFunctions = [...cognitiveFunctions, ...selectedMiddleZoneFunctions];
+
+  console.log(cognitiveFunctions);
 
   const cognitiveFunctionCounts = {};
   for (const func of cognitiveFunctions) {

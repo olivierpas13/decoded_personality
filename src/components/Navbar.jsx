@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { Link } from "@tanstack/react-router";
 
 const Navbar = ({ children }) => {
   return (
@@ -27,50 +27,58 @@ const Navbar = ({ children }) => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to={"/test"} >{"Free Personality Test"}</Link>
+                <Link to={"/test"}>{"Free Personality Test"}</Link>
               </li>
               <li>
                 <p>Cognitive functions</p>
                 <ul className="p-2">
                   <li>
-                    <Link to={"about-cognitive"}>What are cognitive functions?</Link>
+                    <Link to={"about-cognitive"}>
+                      What are cognitive functions?
+                    </Link>
                   </li>
                   <li>
-                    <Link to={"cognitive-chart"}>Cognitive functions Chart</Link>
+                    <Link to={"cognitive-chart"}>
+                      Cognitive functions Chart
+                    </Link>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <Link href="/">
-            <img src="/decoded_logo.svg" alt="decoded logo" />
+          <Link to={"/"}>
+            <div className="lg:h-12 lg:w-48 lg:p-4">
+              <img src="/decoded_logo.svg" alt="decoded logo" />
+            </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          {/* <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1">
             <li>
-              <Link>Item 1</Link>
+              <Link to={"/test"}>{"Free Personality Test"}</Link>
+            </li>
+            <li>
+              <Link to={"/mbtis"}>Personality Types </Link>
             </li>
             <li>
               <details>
-                <summary>Parent</summary>
+                <summary>Cognitive functions</summary>
                 <ul className="p-2">
                   <li>
-                    <Link>Submenu 1</Link>
+                    <Link to={"/cognitives"}>What are cognitive functions</Link>
                   </li>
                   <li>
-                    <Link>Submenu 2</Link>
+                    <Link to={"/chart"}>Cognitive functions chart</Link>
                   </li>
                 </ul>
               </details>
             </li>
-            <li>
-              <Link>Item 3</Link>
-            </li>
-          </ul> */}
+          </ul>
         </div>
         <div className="navbar-end">
-          <Link to={"/test"} className="btn">{"take the test".toUpperCase()}</Link>
+          <Link to={"/test"} className="btn">
+            {"take the test".toUpperCase()}
+          </Link>
         </div>
       </div>
       {children}
