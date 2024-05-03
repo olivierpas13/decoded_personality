@@ -1,22 +1,8 @@
-
-
-export const mbtiFamilyTypes = {
-  INFP: ["Diplomats"],
-  INFJ: ["Diplomats"],
-  INTP: ["Analysts"],
-  INTJ: ["Analysts"],
-  ISFP: ["Explorers"],
-  ISFJ: ["Sentinels"],
-  ISTP: ["Explorers"],
-  ISTJ: ["Sentinels"],
-  ENFP: ["Diplomats"],
-  ENFJ: ["Diplomats"],
-  ENTP: ["Analysts"],
-  ENTJ: ["Analysts"],
-  ESFP: ["Explorers"],
-  ESFJ: ["Sentinels"],
-  ESTP: ["Explorers"],
-  ESTJ: ["Sentinels"],
+export const mbtiFamilies = {
+  Idealist: ["ENFP", "INFP", "ENFJ", "INFJ"],
+  Analyst: ["ENTP", "INTP", "ENTJ", "INTJ"],
+  Realist: ["ESTP", "ISTP", "ESTJ", "ISTJ"],
+  Traditionalist: ["ESFJ", "ISFJ", "ESTJ", "ISTJ"],
 };
 
 export const mbtiCognitives = {

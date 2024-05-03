@@ -95,7 +95,7 @@ const Test = () => {
     {
       id: 1,
       component: Chess,
-      title: "Analist",
+      title: "Analyst",
       cameraPosition: [115, 80, 88],
       backgroundColor: "#feabda",
       properties: [
