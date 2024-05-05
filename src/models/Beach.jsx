@@ -10,12 +10,13 @@ import { useGLTF } from "@react-three/drei";
 import beachScene from "../assets/beach.glb";
 import QuestionTest from "../components/questions/QuestionContainer";
 
-const Beach = ({ nextQuestion, previousQuestion, ...props }) => {
+const Beach = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
   const { nodes, materials } = useGLTF(beachScene);
   return (
     <QuestionTest
       cameraPosition={[-21, 9.5, 14.5]}
       currentQuestion={1}
+      backgroundColor={backgroundColor}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}
     >

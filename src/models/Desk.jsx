@@ -11,7 +11,7 @@ import { useGLTF } from "@react-three/drei";
 import deskScene from "../assets/desk.glb";
 import QuestionTest from "@/components/questions/QuestionContainer";
 
-const Desk = ({ nextQuestion, previousQuestion, ...props }) => {
+const Desk = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
   const { nodes, materials } = useGLTF(deskScene);
 
 
@@ -19,6 +19,7 @@ const Desk = ({ nextQuestion, previousQuestion, ...props }) => {
     <QuestionTest
       cameraPosition={[53, 132, 210]}
       currentQuestion={2}
+      backgroundColor={backgroundColor}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}
     >

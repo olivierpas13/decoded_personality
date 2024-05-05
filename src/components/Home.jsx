@@ -5,17 +5,17 @@ import { Link } from "@tanstack/react-router";
 const Home = () => {
   return (
     <section className="prose h-screen container w-screen">
-      <div className="h-fit grid grid-cols-2 mt-6 p-41 lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-screen">
-        <div className="home-text lg:text-center lg:w-screen">
-          <h1 className="text-secondary-content my-8 lg:text-5xl lg:tracking-wider">
+      <div className="px-3 md:px-0 mb-16 md:mb-0 h-fit grid grid-cols-2 mt-6 p-41 md:flex md:flex-col md:justify-center md:items-center md:w-screen">
+        <div className="home-text md:text-center md:w-screen">
+          <h1 className="text-secondary-content my-8 md:text-5xl md:tracking-wider">
             Know who you are
           </h1>
-          <p className="py-4 lg:text-xl lg:text lg:tracking-wide">
+          <p className="py-4 md:text-xl md:text md:tracking-wide">
             Do you want to know how your mind works?
           </p>
           <Link
             to={"/test"}
-            className="lg:hidden btn btn-primary btn-outline mt-5"
+            className="md:hidden btn btn-primary btn-outline mt-5"
           >
             {"Take the test".toUpperCase()}
           </Link>
@@ -25,7 +25,7 @@ const Home = () => {
         </ModelContainer>
         <Link
           to={"/test"}
-          className="hidden lg:flex btn btn-primary lg:btn-md btn-outline lg:my-10"
+          className="hidden md:flex btn btn-primary md:btn-md btn-outline md:my-10"
         >
           {"Take the test".toUpperCase()}
         </Link>

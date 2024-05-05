@@ -9,7 +9,7 @@ import QuestionTest from "@/components/questions/QuestionContainer";
 import tripScene from "../assets/trip.glb";
 import { useGLTF } from "@react-three/drei";
 
-const Trip = ({ addAnswer, nextQuestion, previousQuestion, ...props }) => {
+const Trip = ({ addAnswer, nextQuestion, previousQuestion, backgroundColor, ...props }) => {
   const { nodes, materials } = useGLTF(tripScene);
 
   return (
@@ -17,160 +17,97 @@ const Trip = ({ addAnswer, nextQuestion, previousQuestion, ...props }) => {
       cameraPosition={[1.3, 0.4, -0.06]}
       currentQuestion={0}
       nextQuestion={nextQuestion}
+      backgroundColor={backgroundColor}
       previousQuestion={previousQuestion}
     >
-      <group {...props} dispose={null}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface620_stone_0.geometry}
-          material={materials.PaletteMaterial001}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface652_trees_0.geometry}
-          material={materials.PaletteMaterial001}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface652_ground_0.geometry}
-          material={materials.PaletteMaterial002}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1294_ground_0.geometry}
-          material={materials.PaletteMaterial002}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1294_trees_0.geometry}
-          material={materials.PaletteMaterial001}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pCube9_grassss_0.geometry}
-          material={materials.PaletteMaterial004}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1312_stone_0.geometry}
-          material={materials.PaletteMaterial001}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pSphere9_ground_0.geometry}
-          material={materials.PaletteMaterial002}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pSphere14_stone_0.geometry}
-          material={materials.PaletteMaterial001}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pSphere20_road_0.geometry}
-          material={materials.PaletteMaterial007}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pCube72_Clouds_0.geometry}
-          material={materials.PaletteMaterial009}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface946_zabor_0.geometry}
-          material={materials.PaletteMaterial001}
-          position={[-0.06211234, -0.00077946, -0.06057029]}
-          rotation={[0, 0.04957008, 0]}
-          scale={0.00884477}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface586_ground_0.geometry}
-          material={materials.PaletteMaterial002}
-          position={[-0.27872188, 0.02314962, -0.11003465]}
-          rotation={[-3.13168604, -1.1824898, -3.05164059]}
-          scale={0.00399186}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1200_tykva_0.geometry}
-          material={materials.PaletteMaterial003}
-          position={[0.0756451, -0.00330776, 0.11327371]}
-          rotation={[0, 0.57024606, 0]}
-          scale={0.00598215}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1200_grassss_0.geometry}
-          material={materials.PaletteMaterial004}
-          position={[0.0756451, -0.00330776, 0.11327371]}
-          rotation={[0, 0.57024606, 0]}
-          scale={0.00598215}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1352_grass_0.geometry}
-          material={materials.PaletteMaterial005}
-          position={[-0.06168618, -0.00457123, -0.04038849]}
-          scale={[0.15483071, 0.01033777, 0.15483071]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1352_ground2_0.geometry}
-          material={materials.PaletteMaterial006}
-          position={[-0.06168618, -0.00457123, -0.04038849]}
-          scale={[0.15483071, 0.01033777, 0.15483071]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pPlane4_road_0.geometry}
-          material={materials.PaletteMaterial007}
-          position={[0.015894, 0.00114969, -0.04499324]}
-          scale={[0.03675383, 0.01, 0.28785383]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface385_LP2_vespa_0.geometry}
-          material={materials.vespa}
-          position={[0, 0, -0.01599711]}
-          scale={0.01}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface441_LP4_Cat_0.geometry}
-          material={materials.material_12}
-          position={[0, 0, -0.01599711]}
-          scale={0.01}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pCube62_dust_0.geometry}
-          material={materials.PaletteMaterial008}
-          position={[0, 0, -0.01599711]}
-          scale={0.01}
-        />
-      </group>
+    <group {...props} dispose={null}>
+
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface946_zabor_0.geometry}
+        material={materials.PaletteMaterial001}
+        position={[-0.062, -0.001, -0.061]}
+        rotation={[0, 0.05, 0]}
+        scale={0.009}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface586_ground_0.geometry}
+        material={materials.PaletteMaterial002}
+        position={[-0.279, 0.023, -0.11]}
+        rotation={[-3.132, -1.182, -3.052]}
+        scale={0.004}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface1200_tykva_0.geometry}
+        material={materials.PaletteMaterial003}
+        position={[0.076, -0.003, 0.113]}
+        rotation={[0, 0.57, 0]}
+        scale={0.006}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface1200_grassss_0.geometry}
+        material={materials.PaletteMaterial004}
+        position={[0.076, -0.003, 0.113]}
+        rotation={[0, 0.57, 0]}
+        scale={0.006}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface1352_grass_0.geometry}
+        material={materials.PaletteMaterial005}
+        position={[-0.062, -0.005, -0.04]}
+        scale={[0.155, 0.01, 0.155]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface1352_ground2_0.geometry}
+        material={materials.PaletteMaterial006}
+        position={[-0.062, -0.005, -0.04]}
+        scale={[0.155, 0.01, 0.155]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.pPlane4_road_0.geometry}
+        material={materials.PaletteMaterial007}
+        position={[0.016, 0.001, -0.045]}
+        scale={[0.037, 0.01, 0.288]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface385_LP2_vespa_0.geometry}
+        material={materials.vespa}
+        position={[0, 0, -0.016]}
+        scale={0.01}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.polySurface441_LP4_Cat_0.geometry}
+        material={materials.material_12}
+        position={[0, 0, -0.016]}
+        scale={0.01}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.pCube62_dust_0.geometry}
+        material={materials.PaletteMaterial008}
+        position={[0, 0, -0.016]}
+        scale={0.01}
+      />
+    </group>
     </QuestionTest>
   );
 };

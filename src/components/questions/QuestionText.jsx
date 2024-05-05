@@ -13,13 +13,13 @@ const QuestionText = ({
         </div>
       </div>
 
-      <div className="absolute z-20  bottom-16 flex flex-col w-full p-5">
+      <div className="absolute z-20  bottom-16 flex flex-col w-full lg:items-center">
         <button
           onClick={() => {
             addAnswer(firstOpt.value);
             nextQuestion();
           }}
-          className="btn btn-neutral leading-6 h-fit  bg-opacity-80"
+          className="btn btn-neutral leading-6 h-fit  bg-opacity-80 lg:w-1/2"
         >
           {firstOpt.text}
         </button>
@@ -29,7 +29,7 @@ const QuestionText = ({
             addAnswer(secondOpt.value);
             nextQuestion();
           }}
-          className="btn btn-neutral leading-6 p-2 h-fit bg-opacity-80 "
+          className="btn btn-neutral leading-6 p-2 h-fit bg-opacity-80 lg:w-1/2 lg:py-4"
         >
           {secondOpt.text}
         </button>

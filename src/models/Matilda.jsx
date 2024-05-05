@@ -10,12 +10,13 @@ import { useGLTF } from "@react-three/drei";
 import matildaScene from "../assets/matilda.glb";
 import QuestionTest from "@/components/questions/QuestionContainer";
 
-const Matilda = ({ nextQuestion, previousQuestion, ...props }) => {
+const Matilda = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
   const { nodes, materials } = useGLTF(matildaScene);
 
   return (
     <QuestionTest
       cameraPosition={[-34, 104, 240]}
+      backgroundColor={backgroundColor}
       currentQuestion={7}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}
@@ -28,7 +29,7 @@ const Matilda = ({ nextQuestion, previousQuestion, ...props }) => {
           material={materials.surfaceShader1}
         />
       </group>
-    </QuestionTest>
+   </QuestionTest>
   );
 };
 

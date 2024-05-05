@@ -10,12 +10,13 @@ import { useGLTF } from "@react-three/drei";
 import alleyScene from "../assets/alley.glb";
 import QuestionTest from "@/components/questions/QuestionContainer";
 
-const Alley = ({ nextQuestion, previousQuestion, ...props }) => {
+const Alley = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
   const { nodes, materials } = useGLTF(alleyScene);
   return (
     <QuestionTest
       cameraPosition={[0.5, 0.6, 5]}
       currentQuestion={8}
+      backgroundColor={backgroundColor}
       nextQuestion={nextQuestion}
       previousQuestion={previousQuestion}
     >

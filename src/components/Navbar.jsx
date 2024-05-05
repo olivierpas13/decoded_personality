@@ -6,7 +6,7 @@ const Navbar = ({ children }) => {
       <div className=" navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown z-50">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -47,12 +47,12 @@ const Navbar = ({ children }) => {
             </ul>
           </div>
           <Link to={"/"}>
-            <div className="lg:h-12 lg:w-48 lg:p-4">
+            <div className="md:h-12 md:w-48 md:p-4">
               <img src="/decoded_logo.svg" alt="decoded logo" />
             </div>
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to={"/test"}>{"Free Personality Test"}</Link>

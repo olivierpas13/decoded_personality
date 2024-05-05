@@ -1,4 +1,4 @@
-import { useGLTF } from "@react-three/drei";
+import { Environment, useGLTF } from "@react-three/drei";
 import classroomScene from "../assets/classroom.glb";
 import { useRef } from "react";
 import QuestionContainer from "@/components/questions/QuestionContainer";

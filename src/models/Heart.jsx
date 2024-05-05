@@ -8,7 +8,6 @@ Title: Love Low Poly
 
 import { useGLTF } from "@react-three/drei";
 import heartScene from "../assets/heart.glb";
-import Logger from "@/utils/Logger";
 
 const Heart = (props) => {
   const { nodes, materials } = useGLTF(heartScene);

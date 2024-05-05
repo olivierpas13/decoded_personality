@@ -57,7 +57,7 @@ const Families = ({ models, addFamily }) => {
         ))}
       </div>
 
-      <main ref={container} className="family-container h-3/4">
+      <main ref={container} className="family-container h-3/4 w-screen">
         {models.map((model, index) => (
           <View
             key={model.id}

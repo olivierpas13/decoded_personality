@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Logger from "@/utils/Logger";
 
 const ModelContainer = ({ children, cameraPosition }) => {
   return (
@@ -13,7 +12,6 @@ const ModelContainer = ({ children, cameraPosition }) => {
           position: cameraPosition,
         }}
       >
-        <Logger />
         {children}
         <OrbitControls
           enableZoom={false}

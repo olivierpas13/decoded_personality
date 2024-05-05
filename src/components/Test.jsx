@@ -32,6 +32,7 @@ import Gramophone from "@/models/Gramophone";
 import Families from "./questions/Families";
 import Chess from "@/models/Chess";
 import Heart from "@/models/Heart";
+import QuestionContainerTest from "./questions/QuestionContainerTest";
 const Test = () => {
   const navigate = useNavigate();
 
@@ -52,7 +53,6 @@ const Test = () => {
   };
 
   const addFamily = (family) => {
-    console.log(family);
     setAnswers({ ...answers, family: family });
   };
 
@@ -89,7 +89,6 @@ const Test = () => {
     <NiSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
     <NeNi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
   ];
-
 
   const families = [
     {
@@ -249,67 +248,77 @@ const Test = () => {
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[10, 10, 10]}
-      position={[0.2, 0.2, 0.3]}
+      position={[0.2, 0.2, 0.4]}
+      backgroundColor="#EAEAEA" // Light Gray
     />,
     <Classroom
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[0.004, 0.004, 0.004]}
       position={[0, 0.05, -0.1]}
+      backgroundColor="#F5F5F5" // Light Silver
     />,
     <GirlCrying
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
-      scale={[0.3, 0.3, 0.3]}
-      position={[-10, 14, -45]}
+      scale={[0.2,0.2,0.2]}
+      position={[0, 2, -3]}
+      backgroundColor="#D9D9D9" // Dark Gray
     />,
     <Desk
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
-      position={[5, 0, 0]}
+      position={[5, 0, 60]}
+      backgroundColor="#CCCCCC" // Grey
     />,
     <Detective
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[2, 2, 2]}
       position={[0, -0.05, 0]}
+      backgroundColor="#BFBFBF" // Light Grey
     />,
     <Matilda
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
-      position={[0, -55, 0]}
+      position={[0, -55, 10]}
+      backgroundColor="#E0E0E0" // Lighter Grey
     />,
     <Alley
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1.5, 1.5, 1.5]}
       position={[0, -35, -147]}
+      backgroundColor="#C0C0C0" // Silver
     />,
     <Beach
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
       position={[-60, -90, -120]}
+      backgroundColor="#D6D6D6" // Light Silver
     />,
     <Families
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       models={families}
       addFamily={addFamily}
+      backgroundColor="#D1D1D1" // Greyish
     />,
     <MultipleModelsContainer
       addMiddleZone={addMiddleZone}
       reference={ref}
       models={middleZones}
       answers={answers}
+      backgroundColor="#CCCCCC" // Grey
     />,
   ];
 
   return (
     <section className="prose h-screen w-screen">
-      <div className=" join grid grid-cols-2 my-5">
+      <div className=" join grid grid-cols-2 my-5 md:w-screen md:px-20">
         <button
           onClick={() => previousQuestion()}
           className={`join-item btn btn-active border-base-100 ${currentQuestion === 0 ? "btn-disabled" : "btn-active"}`}

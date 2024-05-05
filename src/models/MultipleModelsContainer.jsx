@@ -11,7 +11,6 @@ import {
 
 const MultipleModelsContainer = ({ models, addMiddleZone, answers }) => {
   const container = useRef();
-  console.log(answers);
 
   const [activeViewIndex, setActiveViewIndex] = useState(0);
 
