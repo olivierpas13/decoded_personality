@@ -1,4 +1,4 @@
-import { mbtiCognitives, mbtiFamilies, mbtis } from "../theory/mbtis.js";
+import { mbtiCognitives, mbtiFamilies } from "../theory/mbtis.js";
 
 export function determineMBTI(answers) {
   const selectedFamilyType = answers.family;

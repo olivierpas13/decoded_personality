@@ -41,7 +41,7 @@ const Test = () => {
   };
 
   const addMiddleZone = (zone) => {
-    answers.middleZone = zone;
+    setAnswers({ ...answers, middleZone: zone });
   };
 
   const addFamily = (family) => {
@@ -107,12 +107,13 @@ const Test = () => {
     {
       id: 3,
       component: Compass,
-      title: "Realist",
+      title: "Explorer",
       cameraPosition: [520, 1380, -370],
       backgroundColor: "#c4e3cb",
       properties: [
+        "Adventurous and spontaneous, sometimes can be perceived as impulsive.",
         "Practical and down-to-earth.",
-        "Reliable and responsible.",
+        "Good at adapting to new situations.",
         "Focused on the present and the tangible.",
         "You like new sensations and experiences.",
       ],
@@ -120,7 +121,7 @@ const Test = () => {
     {
       id: 4,
       component: Gramophone,
-      title: "Tradionalist",
+      title: "Realist",
       cameraPosition: [25, 8, 9.5],
       backgroundColor: "#e6e2d3",
       properties: [
@@ -232,6 +233,12 @@ const Test = () => {
   ];
 
   const scenes = [
+    <QuestionContainerTest
+      addMiddleZone={addMiddleZone}
+      addFamily={addFamily}
+      currentQuestion={currentQuestion}
+      nextQuestion={nextQuestion}
+    />,
     <Families
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
@@ -244,6 +251,8 @@ const Test = () => {
     />,
   ];
 
+  console.log(answers);
+
   return (
     <section className="prose h-screen w-screen">
       <div className=" join grid grid-cols-2 my-5 md:w-screen md:px-20">
@@ -255,22 +264,15 @@ const Test = () => {
         </button>
         <button
           onClick={() => nextQuestion()}
-          className="join-item btn btn-active border-base-100"
+          className={`join-item btn btn-active border-base-100 ${(currentQuestion === 8 && answers.family.length === 0) || (currentQuestion === 9 && answers.middleZone.length === 0) ? "btn-disabled" : "btn-active"}`}
         >
           {"next".toUpperCase()}
         </button>
       </div>
-        {questions[currentQuestion]}
-        {currentQuestion < 8 && (
-          <QuestionContainerTest
-            addMiddleZone={addMiddleZone}
-            addFamily={addFamily}
-            currentQuestion={currentQuestion}
-            nextQuestion={nextQuestion}
-          />
-        )}
-        {currentQuestion == 8 && scenes[0]}
-        {currentQuestion == 9 && scenes[1]}
+      {questions[currentQuestion]}
+      {currentQuestion < 8 && scenes[0]}
+      {currentQuestion == 8 && scenes[1]}
+      {currentQuestion == 9 && scenes[2]}
     </section>
   );
 };

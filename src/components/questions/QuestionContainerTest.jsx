@@ -21,7 +21,7 @@ const QuestionContainerTest = ({
   previousQuestion,
 }) => {
   const cameras = [
-    [1.85, 0.6, 0.04],
+    [1.42, 0.46, 0.07],
     [-0.61, 0.55, -1.4],
     [15.6, 81.4, 250],
     [19.42, 127, 250],
@@ -100,6 +100,7 @@ const QuestionContainerTest = ({
             position={cameras[currentQuestion]}
           />
           <OrbitControls
+          enableZoom={true}
             enableDamping={true}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.5}

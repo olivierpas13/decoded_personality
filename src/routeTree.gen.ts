@@ -12,6 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as TestImport } from './routes/test'
+import { Route as MbtisImport } from './routes/mbtis'
+import { Route as CognitivesImport } from './routes/cognitives'
+import { Route as ChartImport } from './routes/chart'
 import { Route as IndexImport } from './routes/index'
 import { Route as ResultsIstpImport } from './routes/results/istp'
 import { Route as ResultsIstjImport } from './routes/results/istj'
@@ -34,6 +37,21 @@ import { Route as ResultsEnfjImport } from './routes/results/enfj'
 
 const TestRoute = TestImport.update({
   path: '/test',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MbtisRoute = MbtisImport.update({
+  path: '/mbtis',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CognitivesRoute = CognitivesImport.update({
+  path: '/cognitives',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ChartRoute = ChartImport.update({
+  path: '/chart',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -130,6 +148,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/chart': {
+      preLoaderRoute: typeof ChartImport
+      parentRoute: typeof rootRoute
+    }
+    '/cognitives': {
+      preLoaderRoute: typeof CognitivesImport
+      parentRoute: typeof rootRoute
+    }
+    '/mbtis': {
+      preLoaderRoute: typeof MbtisImport
+      parentRoute: typeof rootRoute
+    }
     '/test': {
       preLoaderRoute: typeof TestImport
       parentRoute: typeof rootRoute
@@ -205,6 +235,9 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
+  ChartRoute,
+  CognitivesRoute,
+  MbtisRoute,
   TestRoute,
   ResultsEnfjRoute,
   ResultsEnfpRoute,

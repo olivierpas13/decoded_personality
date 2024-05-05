@@ -61,37 +61,36 @@ const Families = ({ models, addFamily }) => {
 
       <main ref={container} className="family-container h-3/4 w-screen">
         {models.map((model, index) => (
-          <View
-            key={model.id}
-            index={index + 1}
-            onClick={() => {
-              document.getElementById("modal" + index).showModal();
-            }}
-            style={{ position: "relative", overflow: "hidden" }}
-            className={`border-4 cursor-pointer ${index === activeViewIndex ? "active" : ""}`}
-          >
-            <color attach="background" args={[model.backgroundColor]} />
-            <Lights controls={false} preset="city" />
+          <Suspense key={model.id} fallback={<Loader />}>
+            <View
+              index={index + 1}
+              onClick={() => {
+                document.getElementById("modal" + index).showModal();
+              }}
+              style={{ position: "relative", overflow: "hidden" }}
+              className={`border-4 cursor-pointer ${index === activeViewIndex ? "active" : ""}`}
+            >
+              <color attach="background" args={[model.backgroundColor]} />
+              <Lights controls={false} preset="city" />
 
-            <OrthographicCamera
-              makeDefault
-              position={model.cameraPosition}
-              zoom={100}
-            />
+              <OrthographicCamera
+                makeDefault
+                position={model.cameraPosition}
+                zoom={100}
+              />
 
-            <Bounds fit clip observe>
-              {React.createElement(model.component, {
-                scale: 3,
-                position: [0, -0.75, 0],
-              })}
-            </Bounds>
-            <ArcballControls enableZoom={false} makeDefault />
-          </View>
+              <Bounds fit clip observe>
+                {React.createElement(model.component, {
+                  scale: 3,
+                  position: [0, -0.75, 0],
+                })}
+              </Bounds>
+              <ArcballControls enableZoom={false} makeDefault />
+            </View>
+          </Suspense>
         ))}
         <Canvas className="canvas" eventSource={container}>
-          <Suspense fallback={<Loader />}>
-            <View.Port />
-          </Suspense>
+          <View.Port />
         </Canvas>
       </main>
     </>
