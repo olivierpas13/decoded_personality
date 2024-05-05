@@ -5,24 +5,20 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-Trips/milk-delivery-b41e30c422d943409291050b77364568
 Title: Milk Delivery
 */
-import QuestionTest from "@/components/questions/QuestionContainer";
 import tripScene from "../assets/trip.glb";
 import { useGLTF } from "@react-three/drei";
 
-const Trip = ({ addAnswer, nextQuestion, previousQuestion, backgroundColor, ...props }) => {
+const Trip = ({
+  addAnswer,
+  nextQuestion,
+  previousQuestion,
+  backgroundColor,
+  ...props
+}) => {
   const { nodes, materials } = useGLTF(tripScene);
 
   return (
-    <QuestionTest
-      cameraPosition={[1.3, 0.4, -0.06]}
-      currentQuestion={0}
-      nextQuestion={nextQuestion}
-      backgroundColor={backgroundColor}
-      previousQuestion={previousQuestion}
-    >
     <group {...props} dispose={null}>
-
-
       <mesh
         castShadow
         receiveShadow
@@ -108,7 +104,6 @@ const Trip = ({ addAnswer, nextQuestion, previousQuestion, backgroundColor, ...p
         scale={0.01}
       />
     </group>
-    </QuestionTest>
   );
 };
 

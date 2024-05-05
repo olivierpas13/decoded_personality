@@ -9,7 +9,7 @@ import {
   Environment,
 } from "@react-three/drei";
 
-const MultipleModelsContainer = ({ models, addMiddleZone, answers }) => {
+const MultipleModelsContainer = ({ models, addMiddleZone }) => {
   const container = useRef();
 
   const [activeViewIndex, setActiveViewIndex] = useState(0);
@@ -65,14 +65,12 @@ const MultipleModelsContainer = ({ models, addMiddleZone, answers }) => {
             onClick={() => {
               document.getElementById("modal" + index).showModal();
             }}
-            // onClick={() => console.log(model.title)}
             style={{ position: "relative", overflow: "hidden" }}
             className={`border-4 cursor-pointer ${index === activeViewIndex ? "active" : ""}`}
           >
             <color attach="background" args={[model.backgroundColor]} />
             <Lights controls={false} preset="city" />
 
-            {/* Default camera setup, customize per model if needed */}
             <OrthographicCamera
               makeDefault
               position={model.cameraPosition}

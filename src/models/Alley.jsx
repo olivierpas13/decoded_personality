@@ -10,190 +10,187 @@ import { useGLTF } from "@react-three/drei";
 import alleyScene from "../assets/alley.glb";
 import QuestionTest from "@/components/questions/QuestionContainer";
 
-const Alley = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
+const Alley = ({
+  nextQuestion,
+  previousQuestion,
+  backgroundColor,
+  ...props
+}) => {
   const { nodes, materials } = useGLTF(alleyScene);
   return (
-    <QuestionTest
-      cameraPosition={[0.5, 0.6, 5]}
-      currentQuestion={8}
-      backgroundColor={backgroundColor}
-      nextQuestion={nextQuestion}
-      previousQuestion={previousQuestion}
-    >
-      <group {...props} dispose={null}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2.geometry}
-          material={materials.Mat_0}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_3.geometry}
-          material={materials.Mat_1}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_4.geometry}
-          material={materials.Mat_10}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_5.geometry}
-          material={materials.Mat_11}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_6.geometry}
-          material={materials.Mat_12}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_7.geometry}
-          material={materials.Mat_13}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_8.geometry}
-          material={materials.Mat_14}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_9.geometry}
-          material={materials.Mat_15}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_10.geometry}
-          material={materials.Mat_16}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_11.geometry}
-          material={materials.Mat_17}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_12.geometry}
-          material={materials.Mat_18}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_13.geometry}
-          material={materials.Mat_2}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_14.geometry}
-          material={materials.Mat_3}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_16.geometry}
-          material={materials.Mat_4}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_17.geometry}
-          material={materials.Mat_5}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_18.geometry}
-          material={materials.Mat_6}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_19.geometry}
-          material={materials.Mat_7}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_20.geometry}
-          material={materials.Mat_8}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_21.geometry}
-          material={materials.Mat_9}
-          position={[0, 18.835716, 98.814919]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={0.165039}
-        />
-      </group>
-    </QuestionTest>
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_2.geometry}
+        material={materials.Mat_0}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_3.geometry}
+        material={materials.Mat_1}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_4.geometry}
+        material={materials.Mat_10}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_5.geometry}
+        material={materials.Mat_11}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_6.geometry}
+        material={materials.Mat_12}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_7.geometry}
+        material={materials.Mat_13}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_8.geometry}
+        material={materials.Mat_14}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_9.geometry}
+        material={materials.Mat_15}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_10.geometry}
+        material={materials.Mat_16}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_11.geometry}
+        material={materials.Mat_17}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_12.geometry}
+        material={materials.Mat_18}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_13.geometry}
+        material={materials.Mat_2}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_14.geometry}
+        material={materials.Mat_3}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_16.geometry}
+        material={materials.Mat_4}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_17.geometry}
+        material={materials.Mat_5}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_18.geometry}
+        material={materials.Mat_6}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_19.geometry}
+        material={materials.Mat_7}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_20.geometry}
+        material={materials.Mat_8}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object_21.geometry}
+        material={materials.Mat_9}
+        position={[0, 18.835716, 98.814919]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={0.165039}
+      />
+    </group>
   );
 };
 

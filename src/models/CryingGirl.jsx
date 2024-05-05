@@ -6,10 +6,8 @@ Source: https://sketchfab.com/3d-models/lofi-hiphop-study-girl-studygirlchalleng
 Title: Lofi Hiphop Study Girl   #StudyGirlChallenge
 */
 
-import { Environment, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import girlScene from "../assets/girl.glb";
-import QuestionContainer from "@/components/questions/QuestionContainer";
-
 const GirlCrying = ({
   nextQuestion,
   previousQuestion,
@@ -18,13 +16,6 @@ const GirlCrying = ({
 }) => {
   const { nodes, materials } = useGLTF(girlScene);
   return (
-    <QuestionContainer
-      cameraPosition={[8.6, 37.4, 114]}
-      currentQuestion={3}
-      nextQuestion={nextQuestion}
-      backgroundColor={backgroundColor}
-      previousQuestion={previousQuestion}
-    >
       <group {...props} dispose={null}>
         <group
           position={[448.116, -7.738, 0]}
@@ -213,7 +204,6 @@ const GirlCrying = ({
           />
         </group>
       </group>
-    </QuestionContainer>
   );
 };
 

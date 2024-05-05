@@ -88,7 +88,6 @@ export function determineMBTI(answers) {
   const orderedFunctions = sortedFunctions
     .map((entry) => entry[0])
     .splice(0, 4);
-
   for (const mbti of possibleMBTIs) {
     let score = 0;
     for (let i = 0; i < orderedFunctions.length; i++) {

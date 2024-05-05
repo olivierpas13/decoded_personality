@@ -14,22 +14,14 @@ const Matilda = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) 
   const { nodes, materials } = useGLTF(matildaScene);
 
   return (
-    <QuestionTest
-      cameraPosition={[-34, 104, 240]}
-      backgroundColor={backgroundColor}
-      currentQuestion={7}
-      nextQuestion={nextQuestion}
-      previousQuestion={previousQuestion}
-    >
-      <group {...props} dispose={null}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.polySurface1_surfaceShader1_0.geometry}
-          material={materials.surfaceShader1}
-        />
-      </group>
-   </QuestionTest>
+    <group {...props} dispose={null}>
+    <mesh
+      castShadow
+      receiveShadow
+      geometry={nodes.polySurface1_surfaceShader1_0.geometry}
+      material={materials.surfaceShader1}
+    />
+  </group>
   );
 };
 

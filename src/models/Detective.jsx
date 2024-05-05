@@ -3,18 +3,16 @@ import detectiveScene from "../assets/detective.glb";
 import { useRef } from "react";
 import QuestionTest from "@/components/questions/QuestionContainer";
 
-const Detective = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
+const Detective = ({
+  nextQuestion,
+  previousQuestion,
+  backgroundColor,
+  ...props
+}) => {
   const ref = useRef();
   const { nodes, materials } = useGLTF(detectiveScene);
 
   return (
-    <QuestionTest
-      cameraPosition={[0.1, 0.05, 0.129]}
-      currentQuestion={6}
-      backgroundColor={backgroundColor}
-      nextQuestion={nextQuestion}
-      previousQuestion={previousQuestion}
-    >
     <group {...props} dispose={null}>
       <mesh
         castShadow
@@ -353,7 +351,6 @@ const Detective = ({ nextQuestion, previousQuestion, backgroundColor, ...props }
         scale={0.01224617}
       />
     </group>
-    </QuestionTest>
   );
 };
 

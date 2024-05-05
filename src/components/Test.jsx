@@ -1,23 +1,14 @@
 import { useState } from "react";
-import Trip from "@/models/Trip";
-import Classroom from "@/models/Classroom";
 import SeSi from "./questions/SeSi";
 import TeTi from "./questions/TeTi";
 import FeTe from "./questions/FeTe";
-import Desk from "@/models/Desk";
 import FeFi from "./questions/FeFi";
-import GirlCrying from "@/models/CryingGirl";
-import Alley from "@/models/Alley";
-import Detective from "@/models/Detective";
 import NeSe from "./questions/NeSe";
-import Matilda from "@/models/Matilda";
 import FiTi from "./questions/FiTi";
 import NiSi from "./questions/NiSi";
-import Beach from "../models/Beach";
 import NeNi from "./questions/NeNi";
 import MultipleModelsContainer from "@/models/MultipleModelsContainer";
 import Rainbow from "@/models/Rainbow";
-import { useRef } from "react";
 import Backpack from "@/models/Backpack";
 import Knife from "@/models/Knife";
 import Calendar from "@/models/Calendar";
@@ -41,7 +32,7 @@ const Test = () => {
     middleZone: "",
     family: "",
   });
-  const ref = useRef();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const addAnswer = (ans) => {
@@ -57,10 +48,7 @@ const Test = () => {
   };
 
   const nextQuestion = () => {
-    if (scenes.length <= currentQuestion + 1) {
-      console.log(answers);
-
-      console.log(determineMBTI(answers));
+    if (10 <= currentQuestion + 1) {
 
       if (determineMBTI(answers)) {
         navigate({
@@ -244,75 +232,15 @@ const Test = () => {
   ];
 
   const scenes = [
-    <Trip
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[10, 10, 10]}
-      position={[0.2, 0.2, 0.4]}
-      backgroundColor="#EAEAEA" // Light Gray
-    />,
-    <Classroom
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[0.004, 0.004, 0.004]}
-      position={[0, 0.05, -0.1]}
-      backgroundColor="#F5F5F5" // Light Silver
-    />,
-    <GirlCrying
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[0.2,0.2,0.2]}
-      position={[0, 2, -3]}
-      backgroundColor="#D9D9D9" // Dark Gray
-    />,
-    <Desk
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[1, 1, 1]}
-      position={[5, 0, 60]}
-      backgroundColor="#CCCCCC" // Grey
-    />,
-    <Detective
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[2, 2, 2]}
-      position={[0, -0.05, 0]}
-      backgroundColor="#BFBFBF" // Light Grey
-    />,
-    <Matilda
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[1, 1, 1]}
-      position={[0, -55, 10]}
-      backgroundColor="#E0E0E0" // Lighter Grey
-    />,
-    <Alley
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[1.5, 1.5, 1.5]}
-      position={[0, -35, -147]}
-      backgroundColor="#C0C0C0" // Silver
-    />,
-    <Beach
-      previousQuestion={previousQuestion}
-      nextQuestion={nextQuestion}
-      scale={[1, 1, 1]}
-      position={[-60, -90, -120]}
-      backgroundColor="#D6D6D6" // Light Silver
-    />,
     <Families
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       models={families}
       addFamily={addFamily}
-      backgroundColor="#D1D1D1" // Greyish
     />,
     <MultipleModelsContainer
       addMiddleZone={addMiddleZone}
-      reference={ref}
       models={middleZones}
-      answers={answers}
-      backgroundColor="#CCCCCC" // Grey
     />,
   ];
 
@@ -333,7 +261,9 @@ const Test = () => {
         </button>
       </div>
       {questions[currentQuestion]}
-      {scenes[currentQuestion]}
+      {currentQuestion < 8 && <QuestionContainerTest addMiddleZone={addMiddleZone} addFamily={addFamily} currentQuestion={currentQuestion} nextQuestion={nextQuestion} />}
+      {currentQuestion == 8 && scenes[0]}
+      {currentQuestion == 9 && scenes[1]}
     </section>
   );
 };
