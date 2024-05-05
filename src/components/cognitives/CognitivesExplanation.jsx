@@ -1,25 +1,27 @@
 import { cognitiveFunctions } from "@/theory/mbtis";
+import { determineFunctionColor } from "@/utils/mbtiUtils";
 
 const CognitivesExplanation = () => {
   return (
     <div className="prose results-container w-3/4 mx-auto">
       <h2 className="p-4 text-center">Cognitive Functions</h2>
       <p className="leading-10">
-        Cognitive functions are the mental processes that we use to make sense
-        of the world. They are the tools that we use to gather information and
-        make decisions. Each of the 16 personality types has a unique set of
-        cognitive functions. These functions are what make each type unique.
-      </p>
-      <p className="leading-10">
-        There are eight cognitive functions in total. Each function is either
-        introverted or extroverted, and each function is either sensing,
-        intuition, thinking, or feeling. The eight functions are:
-      </p>
+  Cognitive functions are the mental processes that we use to make sense
+  of the world. They are the tools that we use to gather information and
+  make decisions. Each of the 16 personality types has a unique set of
+  <span className="font-semibold">cognitive functions</span>. These functions are what make each type unique.
+</p>
+<p className="leading-10">
+  There are eight cognitive functions in total. Each function is either
+  introverted or extroverted, and each function is either sensing,
+  intuition, thinking, or feeling. The eight functions are:
+</p>
+
       <div className="grid grid-cols-2 gap-5">
         {Object.values(cognitiveFunctions).map((func, index) => (
           <div className="card bg-base-100 shadow-md" key={index}>
             <div className="card-body">
-              <h4>{func.name}</h4>
+              <h4 className={`${determineFunctionColor(func.abbreviation  )}`}>{func.name}</h4>
               <h5>{func.abbreviation}</h5>
               <ul>
                 {func.characteristics.map((char, index) => (

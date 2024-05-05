@@ -1,3 +1,4 @@
+import { FaUser } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 
 const Navbar = ({ children }) => {
@@ -30,17 +31,16 @@ const Navbar = ({ children }) => {
                 <Link to={"/test"}>{"Free Personality Test"}</Link>
               </li>
               <li>
+                <Link to={"/mbtis"}>Personality Types </Link>
+              </li>
+              <li>
                 <p>Cognitive functions</p>
                 <ul className="p-2">
                   <li>
-                    <Link to={"about-cognitive"}>
-                      What are cognitive functions?
-                    </Link>
+                    <Link to={"/cognitives"}>What are cognitive functions</Link>
                   </li>
                   <li>
-                    <Link to={"cognitive-chart"}>
-                      Cognitive functions Chart
-                    </Link>
+                    <Link to={"/chart"}>Cognitive functions Chart</Link>
                   </li>
                 </ul>
               </li>

@@ -1,14 +1,18 @@
 import { mbtis } from "@/theory/mbtis";
-import { determineBackgroundMBTI, determineTitleColor } from "@/utils/mbtiUtils";
+import {
+  determineBackgroundMBTI,
+  determineFunctionColor,
+  determineTitleColor,
+} from "@/utils/mbtiUtils";
 
 const CognitivesChart = () => {
   return (
-    <div className="overflow-x-auto prose results-container p-6">
-        <h2 className="text-center1">Cognitive Functions Chart</h2>
-      <table className="table table-zebra">
+    <div className="overflow-1 prose results-container py-4">
+      <h2 className="text-center py-3">Cognitive Functions Chart</h2>
+      <table className="table table-zebra w-screen">
         <thead>
           <tr>
-            <th></th>
+            <th className="hidden md:flex"></th>
             <th>MBTI</th>
             <th>Dominant</th>
             <th>Auxiliary</th>
@@ -17,18 +21,25 @@ const CognitivesChart = () => {
           </tr>
         </thead>
         <tbody>
-            {
-                Object.values(mbtis).map((mbti, index) => (
-                    <tr className="hover" key={index}>
-                        <th>{index + 1}</th>
-                        <td className={`font-bold ${determineTitleColor(mbti.family)}`}>{mbti.alias}</td>
-                        <td>{mbti.cognitives[0].abbreviation} - {mbti.cognitives[0].name}</td>
-                        <td>{mbti.cognitives[1].abbreviation} - {mbti.cognitives[1].name}</td>
-                        <td>{mbti.cognitives[2].abbreviation} - {mbti.cognitives[2].name}</td>
-                        <td>{mbti.cognitives[3].abbreviation} - {mbti.cognitives[3].name}</td>
-                    </tr>
-                ))
-            }
+          {Object.values(mbtis).map((mbti, index) => (
+            <tr className="hover" key={index}>
+              <th className="hidden md:flex">{index + 1}</th>
+              <td className={`font-bold ${determineTitleColor(mbti.family)}`}>
+                {mbti.alias}
+              </td>
+              {mbti.cognitives.map((cognitive, index) => (
+                <td
+                  className={`${determineFunctionColor(cognitive.abbreviation)}`}
+                  key={index}
+                >
+                  {cognitive.abbreviation}
+                  <span className="hidden md:inline-block font-semibold text-gray-500">
+                    - {cognitive.name}
+                  </span>
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
