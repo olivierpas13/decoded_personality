@@ -8,6 +8,8 @@ import {
   ArcballControls,
   Environment,
 } from "@react-three/drei";
+import Loader from "@/components/Loader";
+import { Suspense } from "react";
 
 const MultipleModelsContainer = ({ models, addMiddleZone }) => {
   const container = useRef();
@@ -87,7 +89,9 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
           </View>
         ))}
         <Canvas className="canvas" eventSource={container}>
-          <View.Port />
+          <Suspense fallback={<Loader />}>
+            <View.Port />
+          </Suspense>
         </Canvas>
       </main>
     </>

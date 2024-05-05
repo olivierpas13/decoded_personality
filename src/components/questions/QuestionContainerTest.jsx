@@ -6,8 +6,14 @@ import Desk from "@/models/Desk";
 import Detective from "@/models/Detective";
 import Matilda from "@/models/Matilda";
 import Trip from "@/models/Trip";
-import { Environment, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Loader from "../Loader";
+import { Suspense } from "react";
 
 const QuestionContainerTest = ({
   currentQuestion,
@@ -86,24 +92,28 @@ const QuestionContainerTest = ({
 
   return (
     <section className="w-screen h-screen">
-      <Canvas
-        className="w-screen h-screen"
-      >
-        <PerspectiveCamera fov={75} makeDefault position={cameras[currentQuestion]} />
-        <OrbitControls
-          enableDamping={true}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI / 2.5}
-        />
-        {scenes[currentQuestion]}
-        <Environment
-          files={"/bg_test.jpg"}
-          environmentIntensity={0}
-          ground={false}
-          background
-        />
-        <directionalLight position={[1, 1, 1]} intensity={3} />
-        <ambientLight intensity={0.5} />
+      <Canvas className="w-screen h-screen">
+        <Suspense fallback={<Loader/>}>
+          <PerspectiveCamera
+            fov={75}
+            makeDefault
+            position={cameras[currentQuestion]}
+          />
+          <OrbitControls
+            enableDamping={true}
+            minPolarAngle={Math.PI / 4}
+            maxPolarAngle={Math.PI / 2.5}
+          />
+          {scenes[currentQuestion]}
+          <Environment
+            files={"/bg_test.jpg"}
+            environmentIntensity={0}
+            ground={false}
+            background
+          />
+          <directionalLight position={[1, 1, 1]} intensity={3} />
+          <ambientLight intensity={0.5} />
+        </Suspense>
       </Canvas>
     </section>
   );

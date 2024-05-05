@@ -7,7 +7,9 @@ import {
   OrthographicCamera,
   ArcballControls,
   Environment,
+  Loader,
 } from "@react-three/drei";
+import { Suspense } from "react";
 
 const Families = ({ models, addFamily }) => {
   const container = useRef();
@@ -87,7 +89,9 @@ const Families = ({ models, addFamily }) => {
           </View>
         ))}
         <Canvas className="canvas" eventSource={container}>
-          <View.Port />
+          <Suspense fallback={<Loader />}>
+            <View.Port />
+          </Suspense>
         </Canvas>
       </main>
     </>

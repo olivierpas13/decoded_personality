@@ -24,6 +24,7 @@ import Families from "./questions/Families";
 import Chess from "@/models/Chess";
 import Heart from "@/models/Heart";
 import QuestionContainerTest from "./questions/QuestionContainerTest";
+import { Suspense } from "react";
 const Test = () => {
   const navigate = useNavigate();
 
@@ -49,7 +50,6 @@ const Test = () => {
 
   const nextQuestion = () => {
     if (10 <= currentQuestion + 1) {
-
       if (determineMBTI(answers)) {
         navigate({
           to: `/results/${determineMBTI(answers)}`,
@@ -260,10 +260,17 @@ const Test = () => {
           {"next".toUpperCase()}
         </button>
       </div>
-      {questions[currentQuestion]}
-      {currentQuestion < 8 && <QuestionContainerTest addMiddleZone={addMiddleZone} addFamily={addFamily} currentQuestion={currentQuestion} nextQuestion={nextQuestion} />}
-      {currentQuestion == 8 && scenes[0]}
-      {currentQuestion == 9 && scenes[1]}
+        {questions[currentQuestion]}
+        {currentQuestion < 8 && (
+          <QuestionContainerTest
+            addMiddleZone={addMiddleZone}
+            addFamily={addFamily}
+            currentQuestion={currentQuestion}
+            nextQuestion={nextQuestion}
+          />
+        )}
+        {currentQuestion == 8 && scenes[0]}
+        {currentQuestion == 9 && scenes[1]}
     </section>
   );
 };
