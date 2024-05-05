@@ -8,7 +8,6 @@ Title: Low Poly Beach Assets
 
 import { useGLTF } from "@react-three/drei";
 import beachScene from "../assets/beach.glb";
-import QuestionTest from "../components/questions/QuestionContainer";
 
 const Beach = ({
   nextQuestion,
@@ -616,7 +615,7 @@ const Beach = ({
         />
       </group>
     </group>
-  );
+    );
 };
 
 export default Beach;
