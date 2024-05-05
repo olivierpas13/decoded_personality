@@ -17,9 +17,10 @@ const Stats = () => {
       </div>
       <div className="stat w-1/3">
         <div className="stat-value text-center text-3xl text-primary">
-          98.7%
+          10
+          <span className="font-extralight"> Questions</span>
         </div>
-        <div className="stat-title">Accuracy</div>
+        <div className="stat-title">Quick and accurate</div>
         <div className="stat-desc text-primary text-wrap">
           Unlike other tests we use cogntive functions to test
         </div>

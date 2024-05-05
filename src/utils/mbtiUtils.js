@@ -31,15 +31,19 @@ export const determineTitleColor = (family) => {
 export const determineFunctionColor = (functionName) => {
     switch (functionName) {
         case "NI":
+            return "text-purple-500";
         case "NE":
             return "text-purple-800";
         case "SE":
+            return "text-orange-500";
         case "SI":
             return "text-orange-800";
         case "TE":
+            return "text-blue-500";
         case "TI":
             return "text-blue-800";
         case "FE":
+            return "text-green-500";
         case "FI":
             return "text-green-800";
         default:

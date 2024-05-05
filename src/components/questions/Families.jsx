@@ -47,6 +47,9 @@ const Families = ({ models, addFamily }) => {
         </dialog>
       ))}
 
+      <h2 className=" p-2 prose w-screen text-gray-600 ">
+        Select one to display more information
+      </h2>
       <div className="absolute grid  grid-cols-2 h-3/4 w-screen">
         {models.map((model, index) => (
           <h4

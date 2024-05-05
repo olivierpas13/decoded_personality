@@ -48,6 +48,12 @@ const Test = () => {
     setAnswers({ ...answers, family: family });
   };
 
+
+  const scrollToButtons = () => {
+    const buttons = document.querySelector(".join");
+    buttons.scrollIntoView({ behavior: "smooth" });
+  };
+
   const nextQuestion = () => {
     if (10 <= currentQuestion + 1) {
       if (determineMBTI(answers)) {
@@ -248,14 +254,14 @@ const Test = () => {
     <MultipleModelsContainer
       addMiddleZone={addMiddleZone}
       models={middleZones}
+      scrollToButtons={scrollToButtons}
     />,
   ];
 
-  console.log(answers);
 
   return (
     <section className="prose h-screen w-screen">
-      <div className=" join grid grid-cols-2 my-5 md:w-screen md:px-20">
+      <div className=" join grid grid-cols-2 md:my-5 md:w-screen md:px-20">
         <button
           onClick={() => previousQuestion()}
           className={`join-item btn btn-active border-base-100 ${currentQuestion === 0 ? "btn-disabled" : "btn-active"}`}

@@ -10,13 +10,20 @@ import {
 } from "@react-three/drei";
 import Loader from "@/components/Loader";
 import { Suspense } from "react";
+import { useEffect } from "react";
 
-const MultipleModelsContainer = ({ models, addMiddleZone }) => {
+const MultipleModelsContainer = ({ models, addMiddleZone, scrollToButtons }) => {
   const container = useRef();
+
+  const specificPartRef = useRef(null);
 
   const [activeViewIndex, setActiveViewIndex] = useState(0);
 
   const [selected, setSelected] = useState("");
+
+  useEffect(() => {
+    specificPartRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []); // Empty dependency array ensures this effect runs only once after the initial render
 
   return (
     <>
@@ -35,6 +42,7 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
                 onClick={() => {
                   setSelected(model.title);
                   addMiddleZone(model.title);
+                  scrollToButtons();
                 }}
               >
                 {"select".toUpperCase()}
@@ -46,8 +54,11 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
           </form>
         </dialog>
       ))}
+      <h2 ref={specificPartRef} className=" p-2 prose w-screen text-gray-600 ">
+        Select one to display more information
+      </h2>
 
-      <div className="absolute grid  grid-cols-2 h-screen w-screen">
+      <div className="absolute grid grid-cols-2 md:grid-cols-4 h-3/4 w-screen p-2 ">
         {models.map((model, index) => (
           <h4
             key={index}
@@ -59,7 +70,10 @@ const MultipleModelsContainer = ({ models, addMiddleZone }) => {
         ))}
       </div>
 
-      <main ref={container} className="mm-container">
+      <main
+        ref={container}
+        className="mm-container gap-1 p-2 grid-cols-2 md:grid-cols-4"
+      >
         {models.map((model, index) => (
           <View
             key={model.id}
