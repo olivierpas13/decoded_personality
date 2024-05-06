@@ -2,6 +2,10 @@
 
 ### Video Demo: 
 
+
+### Web App Link: 
+https://decoded-personality.vercel.app/
+
 ## Introduction
 Decoded, Your Personality is my final project for the CS50 Harvard course, created by Olivier Paspuel. This project aims to provide users with insights into their personality based on various questions that contain 3D models, making the experience interactive and entertaining. The project also provides explanations about cognitive functions. The algorithm for determining the specific MBTI is written in the file determineMbti.js, which uses family types, middle zones, and a cognitive functions array.
 
@@ -31,7 +35,7 @@ To run Decoded, Your Personality locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/decoded-personality.git
+    git clone https://github.com/olivierpas13/decoded_personality.git
     ```
 
 2. Install the required dependencies:
