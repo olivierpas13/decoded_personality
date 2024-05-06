@@ -102,5 +102,4 @@ const Trip = ({
   );
 };
 
-useGLTF.preload(tripScene);
 export default Trip;

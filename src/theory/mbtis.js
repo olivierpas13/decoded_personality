@@ -121,6 +121,7 @@ export const mbtis = {
       "They are usually very introverted and reserved",
     ],
     family: "Idealist",
+    compatibility: "ENFJ",
   },
   INFJ: {
     cognitives: [ni, fe, ti, se],
@@ -133,6 +134,7 @@ export const mbtis = {
       "They are not very good at dealing with conflicts",
     ],
     family: "Idealist",
+    compatibility: "ENTP",
   },
   ENFP: {
     cognitives: [ne, fi, te, si],
@@ -145,6 +147,7 @@ export const mbtis = {
       "They are not very good at following through with their plans",
     ],
     family: "Idealist",
+    compatibility: "INTJ",
   },
   ENFJ: {
     cognitives: [fe, ni, se, ti],
@@ -157,6 +160,7 @@ export const mbtis = {
       "They usually have a very accurate 'first impression' of people",
     ],
     family: "Idealist",
+    compatibility: "INFP",
   },
   INTP: {
     cognitives: [ti, ne, si, fe],
@@ -169,6 +173,7 @@ export const mbtis = {
       "They are not very good at dealing with emotions",
     ],
     family: "Analyst",
+    compatibility: "ENTJ",
   },
   INTJ: {
     cognitives: [ni, te, fi, se],
@@ -181,6 +186,7 @@ export const mbtis = {
       "They are usually very private and reserved",
     ],
     family: "Analyst",
+    compatibility: "ENFP",
   },
   ENTP: {
     cognitives: [ne, ti, fe, si],
@@ -193,6 +199,7 @@ export const mbtis = {
       "They are not very good at following through with their plans",
     ],
     family: "Analyst",
+    compatibility: "INFJ",
   },
   ENTJ: {
     cognitives: [te, ni, se, fi],
@@ -205,6 +212,7 @@ export const mbtis = {
       "They are not very empathetic with people's feelings",
     ],
     family: "Analyst",
+    compatibility: "INTP",
   },
   ISTP: {
     cognitives: [ti, se, ni, fe],
@@ -217,6 +225,7 @@ export const mbtis = {
       "They are not very good at dealing with emotions",
     ],
     family: "Explorer",
+    compatibility: "ESFJ",
   },
   ISFP: {
     cognitives: [fi, se, ni, te],
@@ -229,6 +238,7 @@ export const mbtis = {
       "They are not very good at dealing with conflicts",
     ],
     family: "Explorer",
+    compatibility: "ESTJ",
   },
   ESTP: {
     cognitives: [se, ti, fe, ni],
@@ -241,6 +251,7 @@ export const mbtis = {
       "They are not very good at planning for the future",
     ],
     family: "Explorer",
+    compatibility: "ISFJ",
   },
   ESFP: {
     cognitives: [se, fi, te, ni],
@@ -253,6 +264,7 @@ export const mbtis = {
       "They are not very good at planning for the future",
     ],
     family: "Explorer",
+    compatibility: "ISTJ",
   },
   ISTJ: {
     cognitives: [si, te, fi, ne],
@@ -265,6 +277,7 @@ export const mbtis = {
       "They are not very good at dealing with change",
     ],
     family: "Realist",
+    compatibility: "ESFP",
   },
   ISFJ: {
     cognitives: [si, fe, ti, ne],
@@ -277,6 +290,7 @@ export const mbtis = {
       "They are not very good at dealing with criticism",
     ],
     family: "Realist",
+    compatibility: "ESTP",
   },
   ESTJ: {
     cognitives: [te, si, ne, fi],
@@ -289,6 +303,7 @@ export const mbtis = {
       "They are not very good at dealing with emotions",
     ],
     family: "Realist",
+    compatibility: "ISFP",
   },
   ESFJ: {
     cognitives: [fe, si, ne, ti],
@@ -301,7 +316,6 @@ export const mbtis = {
       "They are not very good at dealing with criticism",
     ],
     family: "Realist",
+    compatibility: "ISTP",
   },
 };
-
-

@@ -1,10 +1,11 @@
+import { Link } from "@tanstack/react-router";
 import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className=" bottom-0 footer footer-center p-3 bg-base-200 text-base-content rounded">
       <nav className="grid grid-flow-col gap-4">
-        <Link to={"/about-project"}>About</Link>
+        <Link to={"/about-project"}>About project - CS50 Final Project</Link>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-3">

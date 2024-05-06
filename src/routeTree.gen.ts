@@ -15,6 +15,7 @@ import { Route as TestImport } from './routes/test'
 import { Route as MbtisImport } from './routes/mbtis'
 import { Route as CognitivesImport } from './routes/cognitives'
 import { Route as ChartImport } from './routes/chart'
+import { Route as AboutProjectImport } from './routes/about-project'
 import { Route as IndexImport } from './routes/index'
 import { Route as ResultsIstpImport } from './routes/results/istp'
 import { Route as ResultsIstjImport } from './routes/results/istj'
@@ -52,6 +53,11 @@ const CognitivesRoute = CognitivesImport.update({
 
 const ChartRoute = ChartImport.update({
   path: '/chart',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutProjectRoute = AboutProjectImport.update({
+  path: '/about-project',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -148,6 +154,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/about-project': {
+      preLoaderRoute: typeof AboutProjectImport
+      parentRoute: typeof rootRoute
+    }
     '/chart': {
       preLoaderRoute: typeof ChartImport
       parentRoute: typeof rootRoute
@@ -235,6 +245,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
+  AboutProjectRoute,
   ChartRoute,
   CognitivesRoute,
   MbtisRoute,

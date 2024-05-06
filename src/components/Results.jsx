@@ -90,7 +90,7 @@ const Results = ({ mbti }) => {
         <Link to={"/mbtis"} className="btn btn-primary btn-outline">
           More Personalities
         </Link>
-        <Link  className="btn btn-primary btn-outline" to={`/results/${mbti.compatible}`}>
+        <Link  className="btn btn-primary btn-outline" to={`/results/${mbti.compatibility}`}>
           Compatible Personality 
         </Link>
       </div>

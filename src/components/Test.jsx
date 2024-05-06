@@ -72,14 +72,14 @@ const Test = () => {
   };
 
   const questions = [
-    <SeSi key={0} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <TeTi key={1} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FeFi key={2} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FeTe key={3} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NeSe key={4} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FiTi key={5} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NiSi key={6} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NeNi key={7} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <SeSi key={"first"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <TeTi key={"second"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeFi key={"third"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeTe key={"fourth"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeSe key={"fifth"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FiTi key={"sixth"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NiSi key={"seventh"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeNi key={"eighth"} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
   ];
 
   const families = [
