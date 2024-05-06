@@ -8,8 +8,11 @@ const Home = () => {
     <Suspense
       fallback={<span className="loading loading-spinner text-primary"></span>}
     >
-      <section className="prose h-fit container w-screen">
-        <div className="px-3 md:px-0 mb-16 md:mb-0 h-fit grid grid-cols-2 mt-6 p-41 md:flex md:flex-col md:justify-center md:items-center md:w-screen">
+      <section className="prose h-fit container w-screen ">
+        <div
+          style={{ backgroundImage: "url(/bg_home.png)" }}
+          className="home-section "
+        >
           <div className="home-text md:text-center md:w-screen">
             <h1 className="text-secondary-content my-8 md:text-5xl md:tracking-wider">
               Know who you are
@@ -33,10 +36,11 @@ const Home = () => {
           >
             {"Take the test".toUpperCase()}
           </Link>
+          <div className="w-screen flex justify-center">
+            <Stats />
+          </div>
         </div>
-        <div className="w-screen flex justify-center">
-          <Stats />
-        </div>
+
         <div className="hero h-fit bg-base-100 w-screen">
           <div className="hero-content flex-col lg:flex-row">
             <img
