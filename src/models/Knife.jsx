@@ -30,4 +30,5 @@ const Knife = (props) => {
   );
 };
 
+useGLTF.preload(knifeScene);
 export default Knife;

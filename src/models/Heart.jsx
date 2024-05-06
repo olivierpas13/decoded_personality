@@ -28,4 +28,5 @@ const Heart = (props) => {
   );
 };
 
+useGLTF.preload(heartScene);
 export default Heart;

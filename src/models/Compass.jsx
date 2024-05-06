@@ -47,4 +47,5 @@ const Compass = (props) => {
   );
 };
 
+useGLTF.preload(compassScene);
 export default Compass;

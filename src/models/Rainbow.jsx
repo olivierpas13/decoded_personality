@@ -26,4 +26,5 @@ const Rainbow = (props) => {
   );
 };
 
+useGLTF.preload(rainbowScene);
 export default Rainbow;

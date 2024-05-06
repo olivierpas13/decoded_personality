@@ -353,4 +353,5 @@ const Detective = ({
   );
 };
 
+useGLTF.preload(detectiveScene);
 export default Detective;

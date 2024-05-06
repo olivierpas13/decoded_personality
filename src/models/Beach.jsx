@@ -618,4 +618,5 @@ const Beach = ({
     );
 };
 
+useGLTF.preload(beachScene);
 export default Beach;

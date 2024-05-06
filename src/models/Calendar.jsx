@@ -32,4 +32,5 @@ const Calendar = (props) => {
   );
 };
 
+useGLTF.preload(calendarScene);
 export default Calendar;

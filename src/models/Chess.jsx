@@ -25,4 +25,5 @@ const Chess = (props) => {
   );
 };
 
+useGLTF.preload(chessScene);
 export default Chess;

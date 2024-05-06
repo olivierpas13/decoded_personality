@@ -20,8 +20,8 @@ const Mbtis = () => {
                 <h3 className="text-lg font-bold card-title">{mbti.name}</h3>
                 <hr className="m-0" />
                 <div className="flex">
-                  <p>{mbti.alias}</p>
-                  <ul className="flex overflow-auto">
+                  <p className="flex-1">{mbti.alias}</p>
+                  <ul className="flex flex-2 ">
                     {mbti.cognitives.map((cognitive, index) => (
                       <li className="badge badge-neutral badge-outline m-1 badge-sm" key={index}>
                         {cognitive.abbreviation}

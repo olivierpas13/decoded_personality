@@ -220,4 +220,5 @@ const Classroom = ({ nextQuestion, previousQuestion, ...props }) => {
   );
 };
 
+useGLTF.preload(classroomScene);
 export default Classroom;

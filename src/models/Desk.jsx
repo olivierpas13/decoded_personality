@@ -204,4 +204,5 @@ const Desk = ({
   );
 };
 
+useGLTF.preload(deskScene);
 export default Desk;

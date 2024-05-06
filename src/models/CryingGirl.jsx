@@ -207,4 +207,5 @@ const GirlCrying = ({
   );
 };
 
+useGLTF.preload(girlScene);
 export default GirlCrying;

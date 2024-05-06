@@ -17,6 +17,7 @@ import {
   FaHandHoldingMedical,
   FaTree,
 } from "react-icons/fa6";
+import { Link } from "@tanstack/react-router";
 
 const Results = ({ mbti }) => {
   const stack = ["Dominant", "Auxiliary", "Tertiary", "Inferior"];
@@ -42,47 +43,58 @@ const Results = ({ mbti }) => {
 
   return (
     <div className="h-fit p-5 w-screen prose results-container lg:p-10">
-        <div className=" flex items-center">
-          <h2 className="m-0 w-fit">{mbti.name}</h2>
-          {mbtiLogoMap[`${mbti.alias}`]}
-        </div>
-        <h3 className="text-gray-500 my-1 ">{mbti.alias} </h3>
-        <hr className="mb-8" />
-        <h4>Cognitive Functions</h4>
-        {mbti.cognitives.map((cog, index) => {
-          return (
-            <div key={index}>
-              <div className="collapse bg-base-200 border">
-                <input type="radio" name="my-accordion-1" />
-                <div className="collapse-title text-l ">
-                  <div className="badge badge-secondary badge-sm mr-3">
-                    {stack[index]}
-                  </div>
-                  {cog.name}
-                  <span className="ml-4 badge badge-sm text-primary">
-                    {cog.abbreviation}
-                  </span>
+      <div className=" flex items-center">
+        <h2 className="m-0 w-fit">{mbti.name}</h2>
+        {mbtiLogoMap[`${mbti.alias}`]}
+      </div>
+      <h3 className="text-gray-500 my-1 ">{mbti.alias} </h3>
+      <hr className="mb-8" />
+      <h4>Cognitive Functions</h4>
+      {mbti.cognitives.map((cog, index) => {
+        return (
+          <div className="w-3/4" key={index}>
+            <div className="collapse collapse-arrow bg-base-200 border">
+              <input type="radio" name="my-accordion-1" />
+              <div className="collapse-title text-l ">
+                <div className="badge badge-secondary badge-sm mr-3">
+                  {stack[index]}
                 </div>
-                <div className="collapse-content ">
-                  <ul>
-                    {cog.characteristics.map((char, index) => {
-                      return <li key={index}>{char}</li>;
-                    })}
-                  </ul>
-                  <span className="badge badge-info mr-4">{cog.mbtis[0]}</span>
-                  <span className="badge badge-info">{cog.mbtis[0]}</span>
-                </div>
+                {cog.name}
+                <span className="ml-4 badge badge-sm text-primary">
+                  {cog.abbreviation}
+                </span>
+              </div>
+              <div className="collapse-content ">
+                <ul>
+                  {cog.characteristics.map((char, index) => {
+                    return <li key={index}>{char}</li>;
+                  })}
+                </ul>
+                <span className="badge badge-info mr-4">{cog.mbtis[0]}</span>
+                <span className="badge badge-info">{cog.mbtis[0]}</span>
               </div>
             </div>
-          );
+          </div>
+        );
+      })}
+      <h4>Characteristics</h4>
+      <ul>
+        {mbti.characteristics.map((char, index) => {
+          return <li key={index}>{char}</li>;
         })}
-        <h4>Characteristics</h4>
-        <ul>
-          {mbti.characteristics.map((char, index) => {
-            return <li  key={index}>{char}</li>;
-          })}
-        </ul>
+      </ul>
+      <div className="post-actions p-4 grid gap-5 grid-flow-col px-24">
+        <Link to={"/cognitives"} className="btn btn-primary btn-outline">
+          Cognitive Functions
+        </Link>
+        <Link to={"/mbtis"} className="btn btn-primary btn-outline">
+          More Personalities
+        </Link>
+        <Link  className="btn btn-primary btn-outline" to={`/results/${mbti.compatible}`}>
+          Compatible Personality 
+        </Link>
       </div>
+    </div>
   );
 };
 

@@ -25,4 +25,5 @@ const Microphone = (props) => {
   );
 };
 
+useGLTF.preload(microphoneScene);
 export default Microphone;

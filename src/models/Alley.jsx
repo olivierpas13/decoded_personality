@@ -193,4 +193,5 @@ const Alley = ({
   );
 };
 
+useGLTF.preload(alleyScene);
 export default Alley;

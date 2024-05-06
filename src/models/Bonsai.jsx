@@ -20,4 +20,5 @@ const Bonsai = (props) => {
   );
 };
 
+useGLTF.preload(bonsaiScene);
 export default Bonsai;

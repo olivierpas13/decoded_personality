@@ -24,4 +24,5 @@ const Matilda = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) 
   );
 };
 
+useGLTF.preload(matildaScene);
 export default Matilda;

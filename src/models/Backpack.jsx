@@ -24,4 +24,5 @@ const Backpack = (props) => {
   );
 };
 
+useGLTF.preload(backpackScene);
 export default Backpack;

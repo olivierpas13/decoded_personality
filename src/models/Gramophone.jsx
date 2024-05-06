@@ -22,4 +22,7 @@ const Gramophone = (props) => {
     </group>
   );
 };
+
+useGLTF.preload(gramphoneScene);
+
 export default Gramophone;
