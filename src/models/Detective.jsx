@@ -1,14 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import detectiveScene from "../assets/detective.glb";
-import { useRef } from "react";
 
-const Detective = ({
-  nextQuestion,
-  previousQuestion,
-  backgroundColor,
-  ...props
-}) => {
-  const ref = useRef();
+const Detective = (props) => {
   const { nodes, materials } = useGLTF(detectiveScene);
 
   return (

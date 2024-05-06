@@ -1,4 +1,3 @@
-import { FaUser } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 
 const Navbar = ({ children }) => {

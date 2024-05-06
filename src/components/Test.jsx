@@ -24,7 +24,6 @@ import Families from "./questions/Families";
 import Chess from "@/models/Chess";
 import Heart from "@/models/Heart";
 import QuestionContainerTest from "./questions/QuestionContainerTest";
-import { Suspense } from "react";
 const Test = () => {
   const navigate = useNavigate();
 
@@ -47,7 +46,6 @@ const Test = () => {
   const addFamily = (family) => {
     setAnswers({ ...answers, family: family });
   };
-
 
   const scrollToButtons = () => {
     const buttons = document.querySelector(".join");
@@ -74,14 +72,14 @@ const Test = () => {
   };
 
   const questions = [
-    <SeSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <TeTi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FeFi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FeTe addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NeSe addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <FiTi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NiSi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
-    <NeNi addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <SeSi key={0} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <TeTi key={1} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeFi key={2} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FeTe key={3} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeSe key={4} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <FiTi key={5} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NiSi key={6} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
+    <NeNi key={7} addAnswer={addAnswer} nextQuestion={nextQuestion} />,
   ];
 
   const families = [
@@ -240,24 +238,26 @@ const Test = () => {
 
   const scenes = [
     <QuestionContainerTest
+      key={0}
       addMiddleZone={addMiddleZone}
       addFamily={addFamily}
       currentQuestion={currentQuestion}
       nextQuestion={nextQuestion}
     />,
     <Families
+      key={1}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       models={families}
       addFamily={addFamily}
     />,
     <MultipleModelsContainer
+      key={2}
       addMiddleZone={addMiddleZone}
       models={middleZones}
       scrollToButtons={scrollToButtons}
     />,
   ];
-
 
   return (
     <section className="prose h-screen w-screen">

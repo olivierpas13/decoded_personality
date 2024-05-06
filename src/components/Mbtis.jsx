@@ -9,11 +9,11 @@ const Mbtis = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-8">
         {Object.values(mbtis).map((mbti, index) => (
           <Link
+            key={index}
             style={{ textDecoration: "none" }}
             to={`/results/${mbti.alias}`}
           >
             <div
-              key={index}
               className={`card shadow-md ${determineBackgroundMBTI(mbti.family)}`}
             >
               <div className="card-body">
@@ -23,7 +23,10 @@ const Mbtis = () => {
                   <p className="flex-1">{mbti.alias}</p>
                   <ul className="flex flex-2 ">
                     {mbti.cognitives.map((cognitive, index) => (
-                      <li className="badge badge-neutral badge-outline m-1 badge-sm" key={index}>
+                      <li
+                        className="badge badge-neutral badge-outline m-1 badge-sm"
+                        key={index}
+                      >
                         {cognitive.abbreviation}
                       </li>
                     ))}

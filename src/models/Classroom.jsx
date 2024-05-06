@@ -1,7 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import classroomScene from "../assets/classroom.glb";
 
-const Classroom = ({ nextQuestion, previousQuestion, ...props }) => {
+const Classroom = (props) => {
   const { nodes, materials } = useGLTF(classroomScene);
 
   return (

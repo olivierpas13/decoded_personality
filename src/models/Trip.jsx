@@ -9,10 +9,6 @@ import tripScene from "../assets/trip.glb";
 import { useGLTF } from "@react-three/drei";
 
 const Trip = ({
-  addAnswer,
-  nextQuestion,
-  previousQuestion,
-  backgroundColor,
   ...props
 }) => {
   const { nodes, materials } = useGLTF(tripScene);
@@ -21,7 +17,6 @@ const Trip = ({
     <group {...props} dispose={null}>
       <mesh
         castShadow
-        receiveShadow
         geometry={nodes.polySurface946_zabor_0.geometry}
         material={materials.PaletteMaterial001}
         position={[-0.062, -0.001, -0.061]}

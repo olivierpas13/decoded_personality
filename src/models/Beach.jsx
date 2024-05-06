@@ -9,12 +9,7 @@ Title: Low Poly Beach Assets
 import { useGLTF } from "@react-three/drei";
 import beachScene from "../assets/beach.glb";
 
-const Beach = ({
-  nextQuestion,
-  previousQuestion,
-  backgroundColor,
-  ...props
-}) => {
+const Beach = (props) => {
   const { nodes, materials } = useGLTF(beachScene);
   return (
     <group {...props} dispose={null}>

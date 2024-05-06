@@ -9,7 +9,7 @@ Title: Matilda
 import { useGLTF } from "@react-three/drei";
 import matildaScene from "../assets/matilda.glb";
 
-const Matilda = ({ nextQuestion, previousQuestion, backgroundColor, ...props }) => {
+const Matilda = (props) => {
   const { nodes, materials } = useGLTF(matildaScene);
 
   return (

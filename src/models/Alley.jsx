@@ -9,12 +9,7 @@ Title: Alley
 import { useGLTF } from "@react-three/drei";
 import alleyScene from "../assets/alley.glb";
 
-const Alley = ({
-  nextQuestion,
-  previousQuestion,
-  backgroundColor,
-  ...props
-}) => {
+const Alley = (props) => {
   const { nodes, materials } = useGLTF(alleyScene);
   return (
     <group {...props} dispose={null}>

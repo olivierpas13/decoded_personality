@@ -12,7 +12,7 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Loader from "../Loader";
+import Loader from "../general/Loader";
 import { Suspense } from "react";
 
 const QuestionContainerTest = ({
@@ -33,6 +33,7 @@ const QuestionContainerTest = ({
 
   const scenes = [
     <Trip
+      key={0}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[10, 10, 10]}
@@ -40,6 +41,7 @@ const QuestionContainerTest = ({
       backgroundColor="#EAEAEA" // Light Gray
     />,
     <Classroom
+      key={1}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[0.004, 0.004, 0.004]}
@@ -47,6 +49,7 @@ const QuestionContainerTest = ({
       backgroundColor="#F5F5F5" // Light Silver
     />,
     <GirlCrying
+      key={2}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[0.2, 0.2, 0.2]}
@@ -54,6 +57,7 @@ const QuestionContainerTest = ({
       backgroundColor="#D9D9D9" // Dark Gray
     />,
     <Desk
+      key={3}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
@@ -61,6 +65,7 @@ const QuestionContainerTest = ({
       backgroundColor="#CCCCCC" // Grey
     />,
     <Detective
+      key={4}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[2, 2, 2]}
@@ -68,6 +73,7 @@ const QuestionContainerTest = ({
       backgroundColor="#BFBFBF" // Light Grey
     />,
     <Matilda
+      key={5}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
@@ -75,6 +81,7 @@ const QuestionContainerTest = ({
       backgroundColor="#E0E0E0" // Lighter Grey
     />,
     <Alley
+      key={6}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1.5, 1.5, 1.5]}
@@ -82,6 +89,7 @@ const QuestionContainerTest = ({
       backgroundColor="#C0C0C0" // Silver
     />,
     <Beach
+      key={7}
       previousQuestion={previousQuestion}
       nextQuestion={nextQuestion}
       scale={[1, 1, 1]}
@@ -93,14 +101,14 @@ const QuestionContainerTest = ({
   return (
     <section className="w-screen h-screen">
       <Canvas className="w-screen h-screen">
-        <Suspense fallback={<Loader/>}>
+        <Suspense fallback={<Loader />}>
           <PerspectiveCamera
             fov={75}
             makeDefault
             position={cameras[currentQuestion]}
           />
           <OrbitControls
-          enableZoom={true}
+            enableZoom={true}
             enableDamping={true}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.5}

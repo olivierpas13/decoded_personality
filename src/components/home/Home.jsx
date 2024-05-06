@@ -1,6 +1,6 @@
 import ModelContainer from "@/models/ModelContainer";
 import HomeGirl from "@/models/HomeGirl";
-import Stats from "./home/Stats";
+import Stats from "./Stats";
 import { Link } from "@tanstack/react-router";
 import { Suspense } from "react";
 const Home = () => {

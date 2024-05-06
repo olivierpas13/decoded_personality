@@ -92,7 +92,7 @@ const CognitivesExplanation = () => {
             balance it. It provides a complementary perspective and is often
             used to achieve the goals set by the dominant function. In the INTP,
             the auxiliary function is Extraverted Intuition (Ne), which helps
-            generate new ideas and possibilities to support the Ti's logical
+            generate new ideas and possibilities to support the Ti&apos;s logical
             framework.1
           </div>
           <hr />

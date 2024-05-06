@@ -1,6 +1,5 @@
 import { mbtis } from "@/theory/mbtis";
 import {
-  determineBackgroundMBTI,
   determineFunctionColor,
   determineTitleColor,
 } from "@/utils/mbtiUtils";

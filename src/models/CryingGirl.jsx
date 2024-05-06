@@ -8,12 +8,7 @@ Title: Lofi Hiphop Study Girl   #StudyGirlChallenge
 
 import { useGLTF } from "@react-three/drei";
 import girlScene from "../assets/girl.glb";
-const GirlCrying = ({
-  nextQuestion,
-  previousQuestion,
-  backgroundColor,
-  ...props
-}) => {
+const GirlCrying = (props) => {
   const { nodes, materials } = useGLTF(girlScene);
   return (
       <group {...props} dispose={null}>

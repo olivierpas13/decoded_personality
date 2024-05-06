@@ -8,7 +8,7 @@ import {
   ArcballControls,
   Environment,
 } from "@react-three/drei";
-import Loader from "@/components/Loader";
+import Loader from "@/components/general/Loader";
 import { Suspense } from "react";
 import { useEffect } from "react";
 

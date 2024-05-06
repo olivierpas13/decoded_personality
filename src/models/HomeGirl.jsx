@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 import homegirlScene from "../assets/homegirl.glb"
 
 const HomeGirl = (props) => {
-  const { nodes, materials, animations } = useGLTF(homegirlScene)
+  const { nodes, materials } = useGLTF(homegirlScene)
 
   return (
     <group {...props} dispose={null}>
